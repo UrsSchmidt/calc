@@ -3,68 +3,68 @@
 
 # Commands
 
-|chr |Command |Inspired by     |Short for
-|----|--------|----------------|---------------------------------
-|0-9 |Push #  |Emmental        |
-|A-Z |Push @  |FALSE a-z       |\#0-\#25
-|!   |Logical not|C               |
-|"   |Push string|Befunge         |
-|#   |Push 0  |Emmental        |
-|$   |Pop     |Befunge         |
-|%   |Remainder|C               |
-|&   |And     |C               |
-|'   |Push "  |-               |\#34
-|(   |If      |-               |
-|)   |If      |-               |
-|\*  |Muliply |C               |
-|+   |Add     |C               |
-|,   |Deref   |FALSE ;         |
-|-   |Subtract|C               |
-|.   |Assign  |FALSE :         |
-|/   |Divide  |C               |
-|:   |Duplicate|Befunge         |
-|;   |Pick    |FALSE pick ø, Whitespace copy \[Tab\]\[Space\]|
-|<   |Less    |C               |
-|=   |Equal   |C ==            |
-|>   |Greater |C               |
-|?   |If expression|C               |
-|@   |Rotate  |FALSE           |
-|\[  |While   |Brainfuck       |
-|\\  |Swap    |Befunge         |
-|\]  |While   |Brainfuck       |
-|^   |Xor     |C               |
-|\_  |Negate  |FALSE           |
-|\`  |Signum  |-               |
-|a   |Absolute|-               |
-|b   |        |                |
-|c   |Clear stack|dc              |
-|d   |Decrement|-               |\#1\\-
-|e   |Even    |-               |\#2\\%!
-|f   |Debug 2 |dc              |
-|g   |        |                |
-|h   |        |                |
-|i   |Increment|-               |\#1+
-|j   |Jump i  |- (same as })   |
-|k   |        |                |
-|l   |Push i  |-               |
-|m   |        |                |
-|n   |Write \\n|C               |\#10w
-|o   |Odd     |-               |\#2\\%
-|p   |Debug 1 |dc              |
-|q   |Quit    |dc              |
-|r   |Read    |-               |
-|s   |Slide   |Whitespace \[Tab\]\[LF\]|
-|t   |Write \\t|C               |\#9w
-|u   |        |                |
-|v   |        |                |
-|w   |Write   |-               |
-|x   |Call    |FALSE ! (dc x)  |
-|y   |        |                |
-|z   |Size    |dc              |
-|{   |Function|-               |
-|\|  |Or      |C               |
-|}   |Function|- (same as j)   |
-|~   |Not     |C               |
+|chr |Command           |Inspired by     |Short for
+|----|------------------|----------------|---------------------------------
+|0-9 |Push integer      |Emmental        |
+|A-Z |Push address      |FALSE a-z       |\#0-\#25
+|!   |Logical not       |C               |
+|"   |Push characters   |Befunge         |
+|#   |Push integer 0    |Emmental        |
+|$   |Pop               |Befunge         |
+|%   |Remainder         |C               |
+|&   |Bitwise and       |C               |
+|'   |Push character "  |-               |\#34
+|(   |If                |-               |
+|)   |If                |-               |
+|\*  |Muliply           |C               |
+|+   |Add               |C               |
+|,   |Dereference       |FALSE ;         |
+|-   |Subtract          |C               |
+|.   |Assign            |FALSE :         |
+|/   |Divide            |C               |
+|:   |Duplicate         |Befunge         |
+|;   |Pick              |FALSE pick ø, Whitespace copy \[Tab\]\[Space\]|
+|<   |Is less           |C               |
+|=   |Is equal          |C ==            |
+|>   |Is greater        |C               |
+|?   |If expression     |C               |
+|@   |Rotate            |FALSE           |
+|\[  |While             |Brainfuck       |
+|\\  |Swap              |Befunge         |
+|\]  |While             |Brainfuck       |
+|^   |Bitwise xor       |C               |
+|\_  |Negate            |FALSE           |
+|\`  |Signum            |-               |
+|a   |Absolute          |-               |
+|b   |                  |                |
+|c   |Clear stack       |dc              |
+|d   |Decrement         |-               |\#1\\-
+|e   |Even              |-               |\#2\\%!
+|f   |Debug (prints stack)|dc              |
+|g   |                  |                |
+|h   |                  |                |
+|i   |Increment         |-               |\#1+
+|j   |Jump to address   |- (same as })   |
+|k   |                  |                |
+|l   |Push pc           |-               |
+|m   |                  |                |
+|n   |Write \\n         |C               |\#10w
+|o   |Odd               |-               |\#2\\%
+|p   |Debug (prints top)|dc              |
+|q   |Quit              |dc              |
+|r   |Read              |-               |
+|s   |Slide             |Whitespace \[Tab\]\[LF\]|
+|t   |Write \\t         |C               |\#9w
+|u   |                  |                |
+|v   |                  |                |
+|w   |Write             |-               |
+|x   |Call              |FALSE ! (dc x)  |
+|y   |                  |                |
+|z   |Push stack size   |dc              |
+|{   |Function          |-               |
+|\|  |Bitwise or        |C               |
+|}   |Function          |- (same as j)   |
+|~   |Bitwise not       |C               |
 
 # Common patterns
 
