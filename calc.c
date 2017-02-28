@@ -91,7 +91,7 @@ int main(int argc, char* argv[]) {
             case '$': pop(); break;
             case '%': div0(); op2(%); break;
             case '&': op2(&); break;
-            case'\'': push('"'); break;
+            case'\'': pushf('\''); break;
             case '(': { if (!peek()) gof('(', ')'); } break;
             case ')': break; // end if
             case '*': op2(*); break;
@@ -112,12 +112,12 @@ int main(int argc, char* argv[]) {
             case ']': { if (peek()) gob('[', ']'); } break;
             case '^': op2(^); break;
             case '_': op1(-); break;
-            case '`': { const elem e = pop(); if (e > 0) push(1); else if (e < 0) push(-1); else push(0); } break;
-            case 'a': { const elem e = pop(); if (e >= 0) push(e); else push(-e); } break;
+            // TODO case '`': break;
+            // TODO case 'a': break;
             // TODO case 'b': break;
             case 'c': sp = 0; break;
             case 'd': push(pop() - 1); break;
-            case 'e': push(!(pop() % 2)); break;
+            // TODO case 'e': break;
             case 'f': { for (int j = 0; j < sp; j++) { printf("%i\n", stack[j]); } } break;
             // TODO case 'g': break;
             // TODO case 'h': break;
@@ -127,7 +127,7 @@ int main(int argc, char* argv[]) {
             case 'l': push(i); break;
             // TODO case 'm': break;
             case 'n': putchar('\n'); break;
-            case 'o': push(pop() % 2); break;
+            // TODO case 'o': break;
             case 'p': printf("%i\n", peek()); break;
             case 'q': goto end;
             case 'r': push(getchar()); break;

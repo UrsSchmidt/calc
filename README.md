@@ -13,7 +13,7 @@
 |$   |Pop               |Befunge         |
 |%   |Remainder         |C               |
 |&   |Bitwise and       |C               |
-|'   |Push character "  |-               |\#34
+|'   |Push characters   |-               |
 |(   |If                |-               |
 |)   |If                |-               |
 |\*  |Muliply           |C               |
@@ -34,12 +34,12 @@
 |\]  |While             |Brainfuck       |
 |^   |Bitwise xor       |C               |
 |\_  |Negate            |FALSE           |
-|\`  |Signum            |-               |
-|a   |Absolute          |-               |
+|\`  |                  |                |
+|a   |                  |                |
 |b   |                  |                |
 |c   |Clear stack       |dc              |
 |d   |Decrement         |-               |\#1\\-
-|e   |Even              |-               |\#2\\%!
+|e   |                  |                |
 |f   |Debug (prints stack)|dc              |
 |g   |                  |                |
 |h   |                  |                |
@@ -49,7 +49,7 @@
 |l   |Push pc           |-               |
 |m   |                  |                |
 |n   |Write \\n         |C               |\#10w
-|o   |Odd               |-               |\#2\\%
+|o   |                  |                |
 |p   |Debug (prints top)|dc              |
 |q   |Quit              |dc              |
 |r   |Read              |-               |
