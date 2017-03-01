@@ -10,7 +10,7 @@
 |!   |Logical not       |C               |
 |"   |Push characters   |Befunge         |
 |#   |Push integer 0    |Emmental        |
-|$   |Pop               |Befunge         |
+|$   |Pop               |Befunge, FALSE %|
 |%   |Remainder         |C               |
 |&   |Bitwise and       |C               |
 |'   |Push characters   |Befunge "       |
@@ -22,7 +22,7 @@
 |-   |Subtract          |C               |
 |.   |Assign            |FALSE :         |
 |/   |Divide            |C               |
-|:   |Duplicate         |Befunge, Emmental|
+|:   |Duplicate         |Befunge, Emmental, FALSE $|
 |;   |Pick              |FALSE pick ø, Whitespace copy \[Tab\]\[Space\]|
 |<   |Is less           |C               |
 |=   |Is equal          |C ==            |
@@ -35,12 +35,12 @@
 |^   |Bitwise xor       |C               |
 |\_  |Negate            |FALSE           |
 |\`  |Slide             |Whitespace \[Tab\]\[LF\]|
-|a   |`putchar('\a')`   |C               |\#7w
-|b   |`putchar('\b')`   |C               |\#8w
+|a   |`putchar('\a')`   |C               |\#7p
+|b   |`putchar('\b')`   |C               |\#8p
 |c   |Clear stack       |dc              |
 |d   |Decrement         |Deadfish        |\#1\\-
 |e   |                  |                |
-|f   |`putchar('\f')`   |C               |\#12w
+|f   |`putchar('\f')`   |C               |\#12p
 |g   |`getchar()`       |C               |
 |h   |Halt              |Deadfish        |
 |i   |Increment         |Deadfish        |\#1+
@@ -48,15 +48,15 @@
 |k   |                  |                |
 |l   |Push pc           |-               |
 |m   |                  |                |
-|n   |`putchar('\n')`   |C               |\#10w
+|n   |`putchar('\n')`   |C               |\#10p
 |o   |Output            |Deadfish        |
 |p   |`putchar()`       |C               |
 |q   |Debug (prints all)|dc f            |
-|r   |`putchar('\r')`   |C               |\#13w
+|r   |`putchar('\r')`   |C               |\#13p
 |s   |Square            |Deadfish        |:\*
-|t   |`putchar('\t')`   |C               |\#9w
+|t   |`putchar('\t')`   |C               |\#9p
 |u   |                  |                |
-|v   |`putchar('\v')`   |C               |\#11w
+|v   |`putchar('\v')`   |C               |\#11p
 |w   |                  |                |
 |x   |Call              |dc, FALSE !     |
 |y   |                  |                |
