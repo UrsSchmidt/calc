@@ -68,6 +68,11 @@
 
 # Common patterns
 
+## Pushing an integer
+
+To push 0: `#`
+To push 42: `#42`
+
 ## Is odd / even
 
 Is odd: `#2\%`  
@@ -75,21 +80,23 @@ Is even: `#2\%!`
 
 ## If-else
 
-`if (C) p; else p;`:  
-`C,(\p\)!(\p\)$`
+`if (C) ` body1 `; else ` body2 `;`:  
+`C,(\` body1 `\)!(\` body2 `\)$`
 
 Or if the stack is irrelevant:  
-`C,( )!( )$`
+`C,(` body1 `)!(` body2 `)$`
 
 ## Looping
 
 Looping M..1:  
-`M,[pd]$`
+`M,[` body `d]$`
 
 Looping 1..M:  
-`M,[:M,i-p$d]$`
+`M,[:M,i-` body `$d]$`
 
 Looping N..M:  
-`N,#1[$pi:M,i>]$$`
+`N,#1[$` body `i:M,i>]$$`
 
-`p` here refers to the loop's body.
+## Converting a Deadfish program to calc
+
+Simply add `#` to the beginning of the program. Integer overflow has to be implemented manually. For examples see `examples/deadfish_test*.txt`, which are test programs taken from (https://esolangs.org/wiki/Deadfish#Example_program "Esolang").
