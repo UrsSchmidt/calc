@@ -1,5 +1,5 @@
 # calc
-`calc` is a small esoteric programming language I designed based on FALSE and dc. It also draws inspiration from Befunge, Brainfuck, C, Deadfish, Emmental and Whitespace. This repository contains an interpreter written in C.
+`calc` is a small esoteric programming language I designed based on FALSE, dc and Deadfish. It also draws inspiration from Befunge, Brainfuck, C, Emmental and Whitespace. This repository contains an interpreter written in C.
 
 # Commands
 
@@ -40,30 +40,30 @@
 |c   |Clear stack       |dc              |
 |d   |Decrement         |Deadfish        |\#1\\-
 |e   |                  |                |
-|f   |Debug (prints all)|dc              |
+|f   |                  |                |
 |g   |`getchar`         |C               |
-|h   |                  |                |
+|h   |Halt              |Deadfish        |
 |i   |Increment         |Deadfish        |\#1+
-|j   |Jump to address   |- (same as })   |
+|j   |Jump to address   |-               |
 |k   |                  |                |
 |l   |Push pc           |-               |
 |m   |                  |                |
 |n   |Write \\n         |C               |\#10w
 |o   |Output            |Deadfish        |
 |p   |`putchar`         |C               |
-|q   |Quit              |dc              |
+|q   |Debug (prints all)|dc f            |
 |r   |                  |                |
 |s   |Square            |Deadfish        |:\*
 |t   |Write \\t         |C               |\#9w
 |u   |                  |                |
 |v   |                  |                |
 |w   |                  |                |
-|x   |Call              |FALSE ! (dc x)  |
+|x   |Call              |dc, FALSE !     |
 |y   |                  |                |
 |z   |Push stack size   |dc              |
-|{   |Function          |-               |
+|{   |Function          |dc \[, FALSE \[ |
 |\|  |Bitwise or        |C               |
-|}   |Function          |- (same as j)   |
+|}   |Function          |dc \], FALSE \] |
 |~   |Bitwise not       |C               |
 
 # Common patterns
