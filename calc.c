@@ -74,7 +74,7 @@ char* load(const char* filename) {
 }
 
 int main(int argc, char* argv[]) {
-    if (argc<2) error("Expected one or more arguments");
+    if (argc<2) error("Usage: calc <src> {initial stack elements}");
     const char* prog = load(argv[1]);
     if (!prog) error("Error reading file");
     for (int i=2; i<argc; i++) push(atoi(argv[i]));
@@ -112,7 +112,7 @@ int main(int argc, char* argv[]) {
             case ']': { if (peek()) gob('[', ']'); } break;
             case '^': op2(^); break;
             case '_': op1(-); break;
-            // TODO case '`': break;
+            case '`': { const elem e1 = pop(); has(e1+1); const elem e2 = pop(); for (int j = 0; j < e2; j++) pop(); push(e2); } break;
             // TODO case 'a': break;
             // TODO case 'b': break;
             case 'c': sp = 0; break;
@@ -131,7 +131,7 @@ int main(int argc, char* argv[]) {
             case 'p': printf("%i\n", peek()); break;
             case 'q': goto end;
             case 'r': push(getchar()); break;
-            case 's': { const elem e1 = pop(); has(e1+1); const elem e2 = pop(); for (int j = 0; j < e2; j++) pop(); push(e2); } break;
+            case 's': { const elem e = pop(); push(e * e); } break;
             case 't': putchar('\t'); break;
             // TODO case 'u': break;
             // TODO case 'v': break;

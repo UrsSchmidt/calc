@@ -1,5 +1,5 @@
 # calc
-`calc` is a small esoteric programming language implemented in C based on FALSE and dc. It also draws inspiration from Befunge, Brainfuck, C, Emmental and Whitespace.
+`calc` is a small esoteric programming language I designed based on FALSE and dc. It also draws inspiration from Befunge, Brainfuck, C, Deadfish, Emmental and Whitespace. This repository contains an interpreter written in C.
 
 # Commands
 
@@ -13,16 +13,16 @@
 |$   |Pop               |Befunge         |
 |%   |Remainder         |C               |
 |&   |Bitwise and       |C               |
-|'   |Push characters   |-               |
+|'   |Push characters   |Befunge "       |
 |(   |If                |-               |
 |)   |If                |-               |
-|\*  |Muliply           |C               |
+|\*  |Multiply          |C               |
 |+   |Add               |C               |
 |,   |Dereference       |FALSE ;         |
 |-   |Subtract          |C               |
 |.   |Assign            |FALSE :         |
 |/   |Divide            |C               |
-|:   |Duplicate         |Befunge         |
+|:   |Duplicate         |Befunge, Emmental|
 |;   |Pick              |FALSE pick ø, Whitespace copy \[Tab\]\[Space\]|
 |<   |Is less           |C               |
 |=   |Is equal          |C ==            |
@@ -30,20 +30,20 @@
 |?   |If expression     |C               |
 |@   |Rotate            |FALSE           |
 |\[  |While             |Brainfuck       |
-|\\  |Swap              |Befunge         |
+|\\  |Swap              |Befunge, FALSE  |
 |\]  |While             |Brainfuck       |
 |^   |Bitwise xor       |C               |
 |\_  |Negate            |FALSE           |
-|\`  |                  |                |
+|\`  |Slide             |Whitespace \[Tab\]\[LF\]|
 |a   |                  |                |
 |b   |                  |                |
 |c   |Clear stack       |dc              |
-|d   |Decrement         |-               |\#1\\-
+|d   |Decrement         |Deadfish        |\#1\\-
 |e   |                  |                |
-|f   |Debug (prints stack)|dc              |
+|f   |Debug (prints all)|dc              |
 |g   |                  |                |
 |h   |                  |                |
-|i   |Increment         |-               |\#1+
+|i   |Increment         |Deadfish        |\#1+
 |j   |Jump to address   |- (same as })   |
 |k   |                  |                |
 |l   |Push pc           |-               |
@@ -53,7 +53,7 @@
 |p   |Debug (prints top)|dc              |
 |q   |Quit              |dc              |
 |r   |Read              |-               |
-|s   |Slide             |Whitespace \[Tab\]\[LF\]|
+|s   |Square            |Deadfish        |:\*
 |t   |Write \\t         |C               |\#9w
 |u   |                  |                |
 |v   |                  |                |
@@ -68,9 +68,14 @@
 
 # Common patterns
 
+## Is odd / even
+
+Is odd: `\#2\\%`  
+Is even: `\#2\\%!`
+
 ## If-else
 
-`if (c) p; else p;`:  
+`if (C) p; else p;`:  
 `C,(\p\)!(\p\)$`
 
 Or if the stack is irrelevant:  
