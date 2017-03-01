@@ -35,28 +35,28 @@
 |^   |Bitwise xor       |C               |
 |\_  |Negate            |FALSE           |
 |\`  |Slide             |Whitespace \[Tab\]\[LF\]|
-|a   |                  |                |
-|b   |                  |                |
+|a   |`putchar('\a')`   |C               |\#7w
+|b   |`putchar('\b')`   |C               |\#8w
 |c   |Clear stack       |dc              |
 |d   |Decrement         |Deadfish        |\#1\\-
 |e   |                  |                |
-|f   |                  |                |
-|g   |`getchar`         |C               |
+|f   |`putchar('\f')`   |C               |\#12w
+|g   |`getchar()`       |C               |
 |h   |Halt              |Deadfish        |
 |i   |Increment         |Deadfish        |\#1+
 |j   |Jump to address   |-               |
 |k   |                  |                |
 |l   |Push pc           |-               |
 |m   |                  |                |
-|n   |Write \\n         |C               |\#10w
+|n   |`putchar('\n')`   |C               |\#10w
 |o   |Output            |Deadfish        |
-|p   |`putchar`         |C               |
+|p   |`putchar()`       |C               |
 |q   |Debug (prints all)|dc f            |
-|r   |                  |                |
+|r   |`putchar('\r')`   |C               |\#13w
 |s   |Square            |Deadfish        |:\*
-|t   |Write \\t         |C               |\#9w
+|t   |`putchar('\t')`   |C               |\#9w
 |u   |                  |                |
-|v   |                  |                |
+|v   |`putchar('\v')`   |C               |\#11w
 |w   |                  |                |
 |x   |Call              |dc, FALSE !     |
 |y   |                  |                |
