@@ -119,7 +119,7 @@ int main(int argc, char* argv[]) {
             case 'd': push(pop() - 1); break;
             // TODO case 'e': break;
             case 'f': { for (int j = 0; j < sp; j++) { printf("%i\n", stack[j]); } } break;
-            // TODO case 'g': break;
+            case 'g': push(getchar()); break;
             // TODO case 'h': break;
             case 'i': push(pop() + 1); break;
             case 'j': i = pop(); break;
@@ -127,15 +127,15 @@ int main(int argc, char* argv[]) {
             case 'l': push(i); break;
             // TODO case 'm': break;
             case 'n': putchar('\n'); break;
-            // TODO case 'o': break;
-            case 'p': printf("%i\n", peek()); break;
+            case 'o': printf("%d\n", peek()); break;
+            case 'p': putchar(pop()); break;
             case 'q': goto end;
-            case 'r': push(getchar()); break;
+            // TODO case 'r': break;
             case 's': { const elem e = pop(); push(e * e); } break;
             case 't': putchar('\t'); break;
             // TODO case 'u': break;
             // TODO case 'v': break;
-            case 'w': putchar(pop()); break;
+            // TODO case 'w': break;
             case 'x': { const elem e = pop(); push(i); i = e; } break;
             // TODO case 'y': break;
             case 'z': push(sp); break;

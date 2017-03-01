@@ -41,7 +41,7 @@
 |d   |Decrement         |Deadfish        |\#1\\-
 |e   |                  |                |
 |f   |Debug (prints all)|dc              |
-|g   |                  |                |
+|g   |`getchar`         |C               |
 |h   |                  |                |
 |i   |Increment         |Deadfish        |\#1+
 |j   |Jump to address   |- (same as })   |
@@ -49,15 +49,15 @@
 |l   |Push pc           |-               |
 |m   |                  |                |
 |n   |Write \\n         |C               |\#10w
-|o   |                  |                |
-|p   |Debug (prints top)|dc              |
+|o   |Output            |Deadfish        |
+|p   |`putchar`         |C               |
 |q   |Quit              |dc              |
-|r   |Read              |-               |
+|r   |                  |                |
 |s   |Square            |Deadfish        |:\*
 |t   |Write \\t         |C               |\#9w
 |u   |                  |                |
 |v   |                  |                |
-|w   |Write             |-               |
+|w   |                  |                |
 |x   |Call              |FALSE ! (dc x)  |
 |y   |                  |                |
 |z   |Push stack size   |dc              |
@@ -70,8 +70,8 @@
 
 ## Is odd / even
 
-Is odd: `\#2\\%`  
-Is even: `\#2\\%!`
+Is odd: `#2\%`  
+Is even: `#2\%!`
 
 ## If-else
 
