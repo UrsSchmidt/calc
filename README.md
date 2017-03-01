@@ -68,6 +68,9 @@
 
 # Common patterns
 
+## Commenting
+`#(this is a comment)$`
+
 ## Pushing an integer
 
 To push 0: `#`  
