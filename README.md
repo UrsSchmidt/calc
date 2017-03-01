@@ -70,7 +70,7 @@
 
 ## Pushing an integer
 
-To push 0: `#`
+To push 0: `#`  
 To push 42: `#42`
 
 ## Is odd / even
@@ -99,4 +99,4 @@ Looping N..M:
 
 ## Converting a Deadfish program to calc
 
-Simply add `#` to the beginning of the program. Integer overflow has to be implemented manually. For examples see `examples/deadfish_test*.txt`, which are test programs taken from (https://esolangs.org/wiki/Deadfish#Example_program "Esolang").
+Simply add `#` to the beginning of the program. Integer overflow has to be implemented manually. For examples see `examples/deadfish_test*.txt`, which are test programs taken from [Esolang](https://esolangs.org/wiki/Deadfish#Example_program "Esolang").
