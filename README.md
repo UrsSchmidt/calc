@@ -5,66 +5,66 @@
 
 |chr |Command           |Inspired by     |Short for
 |----|------------------|----------------|---------------------------------
-|0-9 |Push integer      |Emmental        |
-|A-Z |Push address      |FALSE a-z       |\#0-\#25
-|!   |Logical not       |C               |
-|"   |Push characters   |Befunge         |
-|#   |Push integer 0    |Emmental        |
-|$   |Pop               |Befunge, FALSE %|
-|%   |Remainder         |C               |
-|&   |Bitwise and       |C               |
-|'   |Push characters   |Befunge "       |
-|(   |If                |-               |
-|)   |If                |-               |
-|\*  |Multiply          |C               |
-|+   |Add               |C               |
-|,   |Dereference       |FALSE ;         |
-|-   |Subtract          |C               |
-|.   |Assign            |FALSE :         |
-|/   |Divide            |C               |
-|:   |Duplicate         |Befunge, Emmental, FALSE $|
-|;   |Pick              |FALSE pick ø, Whitespace copy \[Tab\]\[Space\]|
-|<   |Is less           |C               |
-|=   |Is equal          |C ==            |
-|>   |Is greater        |C               |
-|?   |If expression     |C               |
-|@   |Rotate            |FALSE           |
-|\[  |While             |Brainfuck       |
-|\\  |Swap              |Befunge, FALSE  |
-|\]  |While             |Brainfuck       |
-|^   |Bitwise xor       |C               |
-|\_  |Negate            |FALSE           |
-|\`  |Slide             |Whitespace \[Tab\]\[LF\]|
-|a   |`putchar('\a')`   |C               |\#7p
-|b   |`putchar('\b')`   |C               |\#8p
-|c   |Clear stack       |dc              |
-|d   |Decrement         |Deadfish        |\#1\\-
-|e   |                  |                |
-|f   |`putchar('\f')`   |C               |\#12p
-|g   |`getchar()`       |C               |
-|h   |Halt              |Deadfish        |
-|i   |Increment         |Deadfish        |\#1+
-|j   |Jump to address   |-               |
-|k   |                  |                |
-|l   |Push pc           |-               |
-|m   |                  |                |
-|n   |`putchar('\n')`   |C               |\#10p
-|o   |Output            |Deadfish        |
-|p   |`putchar()`       |C               |
-|q   |Debug (prints all)|dc f            |
-|r   |`putchar('\r')`   |C               |\#13p
-|s   |Square            |Deadfish        |:\*
-|t   |`putchar('\t')`   |C               |\#9p
-|u   |                  |                |
-|v   |`putchar('\v')`   |C               |\#11p
-|w   |                  |                |
-|x   |Call              |dc, FALSE !     |
-|y   |                  |                |
-|z   |Push stack size   |dc              |
-|{   |Function          |dc \[, FALSE \[ |
-|\|  |Bitwise or        |C               |
-|}   |Function          |dc \], FALSE \] |
-|~   |Bitwise not       |C               |
+|`0` - `9`|Push integer |Emmental        |
+|`A` - `Z`|Push address |FALSE `a` - `z` |`\#0` - `\#25`
+|`!` |Logical not       |C               |
+|`"` |Push characters   |Befunge         |
+|`#` |Push integer 0    |Emmental        |
+|`$` |Pop               |Befunge, FALSE `%`|
+|`%` |Remainder         |C               |
+|`&` |Bitwise and       |C               |
+|`'` |Push characters   |Befunge `"`     |
+|`(` |If                |-               |
+|`)` |If                |-               |
+|`*` |Multiply          |C               |
+|`+` |Add               |C               |
+|`,` |Dereference       |FALSE `;`       |
+|`-` |Subtract          |C               |
+|`.` |Assign            |FALSE `:`       |
+|`/` |Divide            |C               |
+|`:` |Duplicate         |Befunge, Emmental, FALSE `$`|
+|`;` |Pick              |FALSE pick `ø`, Whitespace copy \[Tab\]\[Space\]|
+|`<` |Is less           |C               |
+|`=` |Is equal          |C `==`          |
+|`>` |Is greater        |C               |
+|`?` |If expression     |C               |
+|`@` |Rotate            |FALSE           |
+|`[` |While             |Brainfuck       |
+|`\` |Swap              |Befunge, FALSE  |
+|`]` |While             |Brainfuck       |
+|`^` |Bitwise xor       |C               |
+|`_` |Negate            |FALSE           |
+|`` ` ``|Slide          |Whitespace \[Tab\]\[LF\]|
+|`a` |`putchar('\a')`   |C               |`#7p`
+|`b` |`putchar('\b')`   |C               |`#8p`
+|`c` |Clear stack       |dc              |
+|`d` |Decrement         |Deadfish        |`#1\-`
+|`e` |                  |                |
+|`f` |`putchar('\f')`   |C               |`#12p`
+|`g` |`getchar()`       |C               |
+|`h` |Halt              |Deadfish        |
+|`i` |Increment         |Deadfish        |`#1+`
+|`j` |Jump to address   |-               |
+|`k` |                  |                |
+|`l` |Push pc           |-               |
+|`m` |                  |                |
+|`n` |`putchar('\n')`   |C               |`#10p`
+|`o` |Output            |Deadfish        |
+|`p` |`putchar()`       |C               |
+|`q` |Debug (prints all)|dc `f`          |
+|`r` |`putchar('\r')`   |C               |`#13p`
+|`s` |Square            |Deadfish        |`:*`
+|`t` |`putchar('\t')`   |C               |`#9p`
+|`u` |                  |                |
+|`v` |`putchar('\v')`   |C               |`#11p`
+|`w` |                  |                |
+|`x` |Call              |dc, FALSE `!`   |
+|`y` |                  |                |
+|`z` |Push stack size   |dc              |
+|`{` |Function          |dc `[`, FALSE `[`|
+|`|` |Bitwise or        |C               |
+|`}` |Function          |dc `]`, FALSE `]`|
+|`~` |Bitwise not       |C               |
 
 # Common patterns
 
