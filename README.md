@@ -1,5 +1,5 @@
 # calc
-`calc` is a small esoteric programming language I designed based on FALSE, dc and Deadfish. It also draws inspiration from Befunge, Brainfuck, C, Emmental and Whitespace. This repository contains an interpreter written in C.
+`calc` is a small esoteric programming language I designed based on FALSE, dc and Deadfish. It also draws inspiration from C, Befunge, Whitespace, Emmental and Brainfuck. This repository contains an interpreter written in C.
 
 # Commands
 
@@ -10,7 +10,7 @@
 |`!` |Logical not       |C               |
 |`"` |Push characters   |Befunge         |
 |`#` |Push integer 0    |Emmental        |
-|`$` |Pop               |Befunge, FALSE `%`|
+|`$` |Pop (aka Discard/Drop)|Befunge, FALSE `%`, Whitespace \[LF\]\[LF\]|
 |`%` |Remainder         |C               |
 |`&` |Bitwise and       |C               |
 |`'` |Push characters   |Befunge `"`     |
@@ -22,18 +22,18 @@
 |`-` |Subtract          |C               |
 |`.` |Assign            |FALSE `:`       |
 |`/` |Divide            |C               |
-|`:` |Duplicate         |Befunge, Emmental, FALSE `$`|
-|`;` |Pick              |FALSE pick `ø`, Whitespace copy \[Tab\]\[Space\]|
+|`:` |Duplicate         |Befunge, Emmental, FALSE `$`, Whitespace \[LF\]\[Space\]|
+|`;` |Pick (aka Copy)   |FALSE `ø`, Whitespace \[Tab\]\[Space\]|
 |`<` |Is less           |C               |
 |`=` |Is equal          |C `==`          |
 |`>` |Is greater        |C               |
 |`?` |If expression     |C               |
 |`@` |Rotate            |FALSE           |
 |`[` |While             |Brainfuck       |
-|`\` |Swap              |Befunge, FALSE  |
+|`\` |Swap              |Befunge, FALSE, Whitespace \[LF\]\[Tab\]|
 |`]` |While             |Brainfuck       |
 |`^` |Bitwise xor       |C               |
-|`_` |Negate            |FALSE           |
+|`_` |Negate            |dc, FALSE       |
 |`` ` ``|Slide          |Whitespace \[Tab\]\[LF\]|
 |`a` |`putchar('\a')`   |C               |`#7p`
 |`b` |`putchar('\b')`   |C               |`#8p`
