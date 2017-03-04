@@ -1,5 +1,5 @@
 {@@N.M.
-M,#=(N,i\)$
-M,#<N,#=&(M,d#1A,x\)$
-M,#<N,#<&(M,dM,N,dA,xA,x\)$
+M,#=(N,i)
+M,#<N,#=&(M,d#1A,x)
+M,#<N,#<&(M,dM,N,dA,xA,x)
 \}:A.xo$

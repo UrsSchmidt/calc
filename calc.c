@@ -91,7 +91,7 @@ int main(int argc, char* argv[]) {
             case '%': div0(); op2(%); break;
             case '&': op2(&); break;
             case'\'': pushf('\''); break;
-            case '(': { if (!peek()) gof('(', ')'); } break;
+            case '(': { if (!pop()) gof('(', ')'); } break;
             case ')': break; // end if
             case '*': op2(*); break;
             case '+': op2(+); break;

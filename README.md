@@ -69,8 +69,7 @@
 # Common patterns
 
 ## Commenting
-`#(this is a comment)$`  
-`#[this is a comment]$`  
+`#(this is a comment)`  
 `{this is a comment}$`
 
 ## Pushing an integer
@@ -87,24 +86,18 @@ Is even: `#2\%!`
 
 ### If condition then body
 
-body doesn't access the stack:  
-condition `(` body `)$`
-
-body is accessing the stack:  
-condition `($` body `#)$`
+condition `(` body `)`
 
 ### If condition then body1 else body2
 
 body1 doesn't access the stack:  
-condition `(` body1 `)!($` body2 `#)$`
+condition `:(` body1 `)!(` body2 `)`
 
 body1 is only accessing the top value:  
-condition `(\` body1 `\)!($` body2 `#)$`
+condition `:(\` body1 `\)!(` body2 `)`
 
 body1 is only accessing the top two values:  
-condition `(@@` body1 `@)!($` body2 `#)$`
-
-If body2 doesn't access the stack, you won't need the `$` and `#`.
+condition `:(@@` body1 `@)!(` body2 `)`
 
 ## Looping
 
@@ -124,8 +117,7 @@ Simply add `#` to the beginning of the program. Integer overflow has to be imple
 ## Converting FALSE structures to calc
 
 `c[` body `]?`:  
-`C(` body `)$` if the body doesn't access the stack  
-`C($` body `#)$` if the body is accessing the stack
+`C(` body `)`
 
 `[c][` body `]#`:  
 `C[$` body `C]$`
