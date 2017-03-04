@@ -12,7 +12,7 @@ typedef int32_t elem;
 /*** STACK ***/
 elem stack[STACK_SIZE];
 int sp = 0;
-#define has(x) do{if(sp<x)error("Stack was empty");}while(0)
+#define has(x) do{if(sp<(x))error("Stack was empty");}while(0)
 void push(elem x) {stack[sp++] = x;}
 elem pop() {has(1); return stack[--sp];}
 elem peek() {has(1); return stack[sp-1];}
@@ -111,7 +111,7 @@ int main(int argc, char* argv[]) {
             case ']': { if (peek()) gob('[', ']'); } break;
             case '^': op2(^); break;
             case '_': op1(-); break;
-            case '`': { const elem e1 = pop(); has(e1+1); const elem e2 = pop(); for (int j = 0; j < e2; j++) pop(); push(e2); } break;
+            case '`': { const elem e1 = pop(); has(e1+1); const elem e2 = pop(); for (int j = 0; j < e1; j++) pop(); push(e2); } break;
             case 'a': putchar('\a'); break;
             case 'b': putchar('\b'); break;
             case 'c': sp = 0; break;
