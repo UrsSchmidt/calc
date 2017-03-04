@@ -6,7 +6,7 @@
 |chr |Command           |Inspired by     |Short for
 |----|------------------|----------------|---------------------------------
 |`0` - `9`|Push integer |Emmental        |
-|`A` - `Z`|Push address |FALSE `a` - `z` |`\#0` - `\#25`
+|`A` - `Z`|Push address |FALSE `a` - `z` |`#0` - `#25`
 |`!` |Logical not       |C               |
 |`"` |Push characters   |Befunge         |
 |`#` |Push integer 0    |Emmental        |
@@ -44,9 +44,9 @@
 |`g` |`getchar()`       |C               |
 |`h` |Halt              |Deadfish        |
 |`i` |Increment         |Deadfish        |`#1+`
-|`j` |Jump to address   |-               |
+|`j` |                  |                |
 |`k` |                  |                |
-|`l` |Push pc           |-               |
+|`l` |                  |                |
 |`m` |                  |                |
 |`n` |`putchar('\n')`   |C               |`#10p`
 |`o` |Output            |Deadfish        |

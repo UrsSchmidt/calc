@@ -36,6 +36,7 @@ elem heap[HEAP_SIZE];
         if (ill(c)) goto end; \
         switch (c) { \
         case '"': skipf('"'); break; \
+        case '\'': skipf('\''); break; \
         case from: d++; break; \
         case to: d--; break; \
         } \
@@ -49,6 +50,7 @@ elem heap[HEAP_SIZE];
         if (ill(c)) goto end; \
         switch (c) { \
         case '"': skipb('"'); break; \
+        case '\'': skipb('\''); break; \
         case to: d--; break; \
         case from: d++; break; \
         } \
@@ -119,9 +121,9 @@ int main(int argc, char* argv[]) {
             case 'g': push(getchar()); break;
             case 'h': goto end;
             case 'i': push(pop() + 1); break;
-            case 'j': i = pop(); break;
+            // TODO case 'j': break;
             // TODO case 'k': break;
-            case 'l': push(i); break;
+            // TODO case 'l': break;
             // TODO case 'm': break;
             case 'n': putchar('\n'); break;
             case 'o': printf("%d\n", peek()); break;
