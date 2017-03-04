@@ -69,7 +69,9 @@
 # Common patterns
 
 ## Commenting
-`#(this is a comment)$`
+`#(this is a comment)$`  
+`#[this is a comment]$`  
+`{this is a comment}$`
 
 ## Pushing an integer
 

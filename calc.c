@@ -3,8 +3,8 @@
 // atoi, exit, int32_t
 #include <stdlib.h>
 
-#define STACK_SIZE 256
-#define HEAP_SIZE 256
+#define STACK_SIZE 1024
+#define HEAP_SIZE 32
 
 typedef int32_t elem;
 #define error(s) do{fputs(s"\n",stderr);exit(EXIT_FAILURE);}while(0)
@@ -20,10 +20,7 @@ elem peek() {has(1); return stack[sp-1];}
 #define op2(c) do{has(2);push((pop())c(pop()));}while(0)
 #define div0() do{has(2);if(!stack[sp-2])error("Division by zero");}while(0)
 
-/*** HEAP ***
- * 0x00-0x19: A-Z
- * 0x1A-0xFF: #26-#255
- */
+/*** HEAP ***/
 elem heap[HEAP_SIZE];
 
 #define in(a,b,c) (((a)<=(b))&&((b)<=(c)))
