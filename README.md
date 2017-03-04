@@ -2,7 +2,7 @@
 `calc` is a small [esoteric programming language](https://en.wikipedia.org/wiki/Esoteric_programming_language "esoteric programming language") I designed based on [FALSE](https://esolangs.org/wiki/FALSE "FALSE"), [dc](https://esolangs.org/wiki/Dc "dc") and [Deadfish](https://esolangs.org/wiki/Deadfish "Deadfish"). It also draws inspiration from C, [Befunge](https://esolangs.org/wiki/Befunge "Befunge"), [Whitespace](https://esolangs.org/wiki/Whitespace "Whitespace"), [Emmental](https://esolangs.org/wiki/Emmental "Emmental") and [Brainfuck](https://esolangs.org/wiki/Brainfuck "Brainfuck"). This repository contains an interpreter written in C.
 
 # Basics
-`calc` has a stack and a heap. Every printable ASCII character has exactly one semantic meaning. Some letters do not have any meaning assigned yet. Most characters are executed from left to right (see [Reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation "RPN")). Thus if you wanted to calculate 1 + 2, it would look like this: `#2#1+o$`. Note that the operands are reversed. This will push the number 2, then the number 1, then add both together by popping both arguments from the stack and pushing the result, i.e. 3, then printing the number to the console and then popping the result back from the stack, leaving it empty.
+`calc` has a stack and a heap. Every printable ASCII character has exactly one semantic meaning. Some letters do not have any meaning assigned yet. Most characters are executed from left to right (see [Reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation "RPN")). Thus if you wanted to calculate 1 + 2, it would look like this: `#2#1+o$`. Note that the operands are in reverse order, which is important when subtracting or dividing integers. This example will push the number 2, then the number 1, then add both together by popping both arguments from the stack and pushing the result, i.e. 3, then printing the number to the console and then popping the result back from the stack, leaving it empty.
 
 # Commands
 
@@ -80,7 +80,7 @@
 `#` will push the number 0. The digits `0` - `9` will take the top value, multiply it by ten and add the digit to it.
 
 To push 0: `#`  
-To push 42: `#42`
+To push 42: `#42`  
 To push -1: `#1_`
 
 ## Is odd / even
@@ -123,6 +123,8 @@ Looping N..M:
 
 `[c][` body `]#`:  
 `C[$` body `C]$`
+
+The example `primes.txt` was converted from the [FALSE Prime Numbers](http://strlen.com/false-language "FALSE Prime Numbers") example.
 
 ## Converting a Deadfish program to calc
 
