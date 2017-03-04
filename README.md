@@ -1,21 +1,24 @@
 # calc
-`calc` is a small esoteric programming language I designed based on FALSE, dc and Deadfish. It also draws inspiration from C, Befunge, Whitespace, Emmental and Brainfuck. This repository contains an interpreter written in C.
+`calc` is a small [esoteric programming language](https://en.wikipedia.org/wiki/Esoteric_programming_language "esoteric programming language") I designed based on [FALSE](https://esolangs.org/wiki/FALSE "FALSE"), [dc](https://esolangs.org/wiki/Dc "dc") and [Deadfish](https://esolangs.org/wiki/Deadfish "Deadfish"). It also draws inspiration from C, [Befunge](https://esolangs.org/wiki/Befunge "Befunge"), [Whitespace](https://esolangs.org/wiki/Whitespace "Whitespace"), [Emmental](https://esolangs.org/wiki/Emmental "Emmental") and [Brainfuck](https://esolangs.org/wiki/Brainfuck "Brainfuck"). This repository contains an interpreter written in C.
+
+# Basics
+`calc` has a stack and a heap. Every printable ASCII character has exactly one semantic meaning. Some letters do not have any meaning assigned yet. Most characters are executed from left to right (see [Reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation "RPN")). Thus if you wanted to calculate 1 + 2, it would look like this: `#2#1+o$`. Note that the operands are reversed. This will push the number 2, then the number 1, then add both together by popping both arguments from the stack and pushing the result, i.e. 3, then printing the number to the console and then popping the result back from the stack, leaving it empty.
 
 # Commands
 
 |chr |Command           |Inspired by     |Short for
 |----|------------------|----------------|---------------------------------
-|`0` - `9`|Push integer |Emmental        |
+|`0` - `9`|Push number  |Emmental        |
 |`A` - `Z`|Push address |FALSE `a` - `z` |`#0` - `#25`
 |`!` |Logical not       |C               |
 |`"` |Push characters   |Befunge         |
-|`#` |Push integer 0    |Emmental        |
+|`#` |Push 0            |Emmental        |
 |`$` |Pop (aka Discard/Drop)|Befunge, FALSE `%`, Whitespace \[LF\]\[LF\]|
 |`%` |Remainder         |C               |
 |`&` |Bitwise and       |C               |
 |`'` |Push characters   |Befunge `"`     |
-|`(` |If                |-               |
-|`)` |If                |-               |
+|`(` |If (begin)        |-               |
+|`)` |If (end)          |-               |
 |`*` |Multiply          |C               |
 |`+` |Add               |C               |
 |`,` |Dereference       |FALSE `;`       |
@@ -29,9 +32,9 @@
 |`>` |Is greater        |C               |
 |`?` |If expression     |C               |
 |`@` |Rotate            |FALSE           |
-|`[` |While             |Brainfuck       |
+|`[` |While (begin)     |Brainfuck       |
 |`\` |Swap              |Befunge, FALSE, Whitespace \[LF\]\[Tab\]|
-|`]` |While             |Brainfuck       |
+|`]` |While (end)       |Brainfuck       |
 |`^` |Bitwise xor       |C               |
 |`_` |Negate            |dc, FALSE       |
 |`` ` ``|Slide          |Whitespace \[Tab\]\[LF\]|
@@ -51,7 +54,7 @@
 |`n` |`putchar('\n')`   |C               |`#10p`
 |`o` |Output            |Deadfish        |
 |`p` |`putchar()`       |C               |
-|`q` |Debug (prints all)|dc `f`          |
+|`q` |Debug (print stack)|dc `f`          |
 |`r` |`putchar('\r')`   |C               |`#13p`
 |`s` |Square            |Deadfish        |`:*`
 |`t` |`putchar('\t')`   |C               |`#9p`
@@ -61,9 +64,9 @@
 |`x` |Call              |dc, FALSE `!`   |
 |`y` |                  |                |
 |`z` |Push stack size   |dc              |
-|`{` |Function          |dc `[`, FALSE `[`|
+|`{` |Function (begin)  |dc `[`, FALSE `[`|
 |`|` |Bitwise or        |C               |
-|`}` |Function          |dc `]`, FALSE `]`|
+|`}` |Function (end)    |dc `]`, FALSE `]`|
 |`~` |Bitwise not       |C               |
 
 # Common patterns
@@ -74,8 +77,11 @@
 
 ## Pushing an integer
 
+`#` will push the number 0. The digits `0` - `9` will take the top value, multiply it by ten and add the digit to it.
+
 To push 0: `#`  
 To push 42: `#42`
+To push -1: `#1_`
 
 ## Is odd / even
 
@@ -110,10 +116,6 @@ Looping 1..M:
 Looping N..M:  
 `N,#1[$` body `i:M,i>]$$`
 
-## Converting a Deadfish program to calc
-
-Simply add `#` to the beginning of the program. Integer overflow has to be implemented manually. For examples see `examples/deadfish_test*.txt`, which are test programs taken from [Esolang](https://esolangs.org/wiki/Deadfish#Example_program "Esolang").
-
 ## Converting FALSE structures to calc
 
 `c[` body `]?`:  
@@ -121,3 +123,7 @@ Simply add `#` to the beginning of the program. Integer overflow has to be imple
 
 `[c][` body `]#`:  
 `C[$` body `C]$`
+
+## Converting a Deadfish program to calc
+
+Simply add `#` to the beginning of the Deadfish program. Integer overflow has to be implemented manually. For examples see `examples/deadfish_test*.txt`, which are test programs taken from [Esolang](https://esolangs.org/wiki/Deadfish#Example_program "Esolang").
