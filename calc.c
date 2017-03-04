@@ -1,6 +1,6 @@
-// fputs, getchar, printf, putchar, stderr, fopen/fseek/fclose/etc
+// fputs, getchar, printf, putchar, stderr, fopen/fseek/ftell/fread/fclose
 #include <stdio.h>
-// atoi, exit, int32_t
+// atoi, exit, int32_t, malloc
 #include <stdlib.h>
 
 #define STACK_SIZE 1024
@@ -128,7 +128,7 @@ int main(int argc, char* argv[]) {
             case 'n': putchar('\n'); break;
             case 'o': printf("%d\n", peek()); break;
             case 'p': putchar(pop()); break;
-            case 'q': { for (int j = 0; j < sp; j++) { printf("%i\n", stack[j]); } } break;
+            case 'q': { for (int j = 0; j < sp; j++) printf("%i\n", stack[j]); } break;
             case 'r': putchar('\r'); break;
             case 's': { const elem e = pop(); push(e * e); } break;
             case 't': putchar('\t'); break;
@@ -142,7 +142,7 @@ int main(int argc, char* argv[]) {
             case '|': op2(|); break;
             case '}': i = pop(); break;
             case '~': op1(~); break;
-            default: { if (in('!',c,'~')) error("Unexpected character"); } break;
+            default: { if (in('!', c, '~')) error("Unexpected character"); } break;
             }
     }
 end:
