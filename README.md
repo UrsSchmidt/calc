@@ -125,8 +125,8 @@ Looping N..M:
 `C[$` body `C]$`
 
 The example `primes.txt` was converted from the [FALSE Prime Numbers](http://strlen.com/false-language "FALSE Prime Numbers") example. Here in comparison:  
-<pre> 99 9[1-$][ \$@$@$@$@\/*=[1-$$[%\1-$@]?0=[\$.' ,\]?]?  ]#</pre>  
-<pre>#99#9 d : [$\:@:@:@:@ /*=(d ::($\d :@) #=(\o    \) ) d:] $$$</pre>
+<pre> 99 9[1-$][ \$@$@$@$@\/*=[1-$$[%\1-$@]?0=[\$.' ,\]?]?  ]#
+#99#9 d : [$\:@:@:@:@ /*=(d ::($\d :@) #=(\o    \) ) d:] $$$</pre>
 
 ## Converting a Deadfish program to calc
 
