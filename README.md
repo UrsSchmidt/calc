@@ -52,15 +52,15 @@
 |`l` |                  |                |
 |`m` |                  |                |
 |`n` |`putchar('\n')`   |C               |`#10p`
-|`o` |Output            |Deadfish        |
+|`o` |Output            |Deadfish, dc `p`|`wn`
 |`p` |`putchar()`       |C               |
-|`q` |Debug (print stack)|dc `f`          |
+|`q` |Debug (print stack)|dc `f`         |
 |`r` |`putchar('\r')`   |C               |`#13p`
 |`s` |Square            |Deadfish        |`:*`
 |`t` |`putchar('\t')`   |C               |`#9p`
 |`u` |                  |                |
 |`v` |`putchar('\v')`   |C               |`#11p`
-|`w` |                  |                |
+|`w` |Write             |-               |
 |`x` |Call              |dc, FALSE `!`   |
 |`y` |                  |                |
 |`z` |Push stack size   |dc              |
@@ -125,8 +125,8 @@ Looping N..M:
 `C[$` body `C]$`
 
 The example `primes.txt` was converted from the [FALSE Prime Numbers](http://strlen.com/false-language "FALSE Prime Numbers") example. Here in comparison:  
-<pre> 99 9[1-$][ \$@$@$@$@\/*=[1-$$[%\1-$@]?0=[\$.' ,\]?]?  ]#
-#99#9 d : [$\:@:@:@:@ /*=(d ::($\d :@) #=(\o    \) ) d:] $$$</pre>
+<pre> 99 9[1-$][ \$@$@$@$@\/*=[1-$$[%\1-$@]?0=[\$.'  ,\]?]?  ]#
+#99#9 d : [$\:@:@:@:@ /*=(d ::($\d :@) #=(\w ' 'p\) ) d:] $$$</pre>
 
 ## Converting a Deadfish program to calc
 

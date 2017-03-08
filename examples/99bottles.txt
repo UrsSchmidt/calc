@@ -1,8 +1,8 @@
 #99d[i
-o#',llaw eht no reeb fo selttob '[p]$n
-o#'.reeb fo selttob '[p]$n
+w#',llaw eht no reeb fo selttob '[p]$n
+w#'.reeb fo selttob '[p]$n
 d#',dnuora ti ssap ,nwod eno ekaT'[p]$n
-o#'.llaw eht no reeb fo selttob '[p]$n
+w#'.llaw eht no reeb fo selttob '[p]$n
 d]$
 #',llaw eht no reeb fo elttob 1'[p]$n
 #'.reeb fo elttob 1'[p]$n
