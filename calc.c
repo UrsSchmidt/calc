@@ -26,6 +26,7 @@ elem heap[HEAP_SIZE];
 #define in(a,b,c) (((a)<=(b))&&((b)<=(c)))
 #define ill(c) (!in(0x01,(c),0x7F))
 
+#define putcf(to) do{while((c=prog[i++])!=(to))putchar(c);}while(0)
 #define pushf(to) do{while((c=prog[i++])!=(to))push(c);}while(0)
 #define skipf(to) do{while((c=prog[i++])!=(to));}while(0)
 #define skipb(to) do{while((c=prog[--i])!=(to));}while(0)
@@ -85,7 +86,7 @@ int main(int argc, char* argv[]) {
         else
             switch (c) {
             case '!': op1(!); break;
-            case '"': pushf('"'); break;
+            case '"': putcf('"'); break;
             case '#': push(0); break;
             case '$': pop(); break;
             case '%': div0(); op2(%); break;

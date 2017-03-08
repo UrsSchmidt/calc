@@ -1,1 +1,1 @@
-#'"!dlrow ,olleH"'[p]$n
+"Hello, world!"n
