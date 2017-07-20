@@ -65,7 +65,7 @@
 |`y` |                  |                |
 |`z` |Push stack size   |dc              |
 |`{` |Function (begin)  |dc `[`, FALSE `[`|
-|`|` |Bitwise or        |C               |
+|<code>&#124;</code>|Bitwise or|C        |
 |`}` |Function (end)    |dc `]`, FALSE `]`|
 |`~` |Bitwise not       |C               |
 
