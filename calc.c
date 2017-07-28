@@ -1,6 +1,8 @@
 // fputs, getchar, printf, putchar, stderr, fopen/fseek/ftell/fread/fclose
 #include <stdio.h>
-// atoi, exit, int32_t, malloc
+// int32_t
+#include <stdint.h>
+// atoi, exit, malloc
 #include <stdlib.h>
 
 #define STACK_SIZE 1024
