@@ -1,7 +1,7 @@
-// fputs, getchar, printf, putchar, stderr, fopen/fseek/ftell/fread/fclose
-#include <stdio.h>
 // int32_t
 #include <stdint.h>
+// fputs, getchar, printf, putchar, stderr, fopen/fseek/ftell/fread/fclose
+#include <stdio.h>
 // atoi, exit, malloc
 #include <stdlib.h>
 
