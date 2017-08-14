@@ -63,7 +63,7 @@ char *load(const char *filename) {
     FILE *file = fopen(filename, "rb");
     if (file) {
         fseek(file, 0, SEEK_END);
-        length = ftell(f);
+        length = ftell(file);
         fseek(file, 0, SEEK_SET);
         buffer = malloc(length);
         if (buffer) fread(buffer, 1, length, file);
