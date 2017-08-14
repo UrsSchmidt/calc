@@ -1,8 +1,5 @@
-// int32_t
 #include <stdint.h>
-// fputs, getchar, printf, putchar, stderr, fopen/fseek/ftell/fread/fclose
 #include <stdio.h>
-// atoi, exit, malloc
 #include <stdlib.h>
 
 #define STACK_SIZE 1024
@@ -11,7 +8,7 @@
 typedef int32_t elem;
 #define error(s) do{fputs(s"\n",stderr);exit(EXIT_FAILURE);}while(0)
 
-/*** STACK ***/
+/* stack */
 elem stack[STACK_SIZE];
 int sp = 0;
 #define has(x) do{if(sp<(x))error("Stack was empty");}while(0)
@@ -22,7 +19,7 @@ elem peek() {has(1); return stack[sp-1];}
 #define op2(c) do{has(2);push((pop())c(pop()));}while(0)
 #define div0() do{has(2);if(!stack[sp-2])error("Division by zero");}while(0)
 
-/*** HEAP ***/
+/* heap */
 elem heap[HEAP_SIZE];
 
 #define in(a,b,c) (((a)<=(b))&&((b)<=(c)))
@@ -60,24 +57,24 @@ elem heap[HEAP_SIZE];
     } \
 } while(0)
 
-char* load(const char* filename) {
-    char* buffer = 0;
+char *load(const char *filename) {
+    char *buffer = 0;
     long length;
-    FILE* f = fopen(filename, "rb");
-    if (f) {
-        fseek(f, 0, SEEK_END);
+    FILE *file = fopen(filename, "rb");
+    if (file) {
+        fseek(file, 0, SEEK_END);
         length = ftell(f);
-        fseek(f, 0, SEEK_SET);
+        fseek(file, 0, SEEK_SET);
         buffer = malloc(length);
-        if (buffer) fread(buffer, 1, length, f);
-        fclose(f);
+        if (buffer) fread(buffer, 1, length, file);
+        fclose(file);
     }
     return buffer;
 }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
     if (argc<2) error("Usage: calc <src> {initial stack elements}");
-    const char* prog = load(argv[1]);
+    const char *prog = load(argv[1]);
     if (!prog) error("Error reading file");
     for (int i=2; i<argc; i++) push(atoi(argv[i]));
     for (int i=0;;) {
@@ -95,7 +92,7 @@ int main(int argc, char* argv[]) {
             case '&': op2(&); break;
             case'\'': pushf('\''); break;
             case '(': { if (!pop()) gof('(', ')'); } break;
-            case ')': break; // end if
+            case ')': break; /* end if */
             case '*': op2(*); break;
             case '+': op2(+); break;
             case ',': push(heap[pop()]); break;
@@ -119,15 +116,15 @@ int main(int argc, char* argv[]) {
             case 'b': putchar('\b'); break;
             case 'c': sp = 0; break;
             case 'd': push(pop() - 1); break;
-            // TODO case 'e': break;
+    /* TODO case 'e': break; */
             case 'f': putchar('\f'); break;
             case 'g': push(getchar()); break;
             case 'h': goto end;
             case 'i': push(pop() + 1); break;
-            // TODO case 'j': break;
-            // TODO case 'k': break;
-            // TODO case 'l': break;
-            // TODO case 'm': break;
+    /* TODO case 'j': break; */
+    /* TODO case 'k': break; */
+    /* TODO case 'l': break; */
+    /* TODO case 'm': break; */
             case 'n': putchar('\n'); break;
             case 'o': printf("%d\n", peek()); break;
             case 'p': putchar(pop()); break;
@@ -135,11 +132,11 @@ int main(int argc, char* argv[]) {
             case 'r': putchar('\r'); break;
             case 's': { const elem e = pop(); push(e * e); } break;
             case 't': putchar('\t'); break;
-            // TODO case 'u': break;
+    /* TODO case 'u': break; */
             case 'v': putchar('\v'); break;
             case 'w': printf("%d", peek()); break;
             case 'x': { const elem e = pop(); push(i); i = e; } break;
-            // TODO case 'y': break;
+    /* TODO case 'y': break; */
             case 'z': push(sp); break;
             case '{': { push(i); gof('{', '}'); } break;
             case '|': op2(|); break;
