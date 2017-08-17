@@ -146,5 +146,5 @@ int main(int argc, char *argv[]) {
             }
     }
 end:
-    return sp>0?pop():0;
+    return sp>0 ? pop() : EXIT_SUCCESS;
 }
