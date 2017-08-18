@@ -1,3 +1,4 @@
+#include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -6,18 +7,18 @@
 #define HEAP_SIZE 32
 
 typedef int32_t elem;
-#define error(s) do{fputs(s"\n",stderr);exit(EXIT_FAILURE);}while(0)
+#define error(s) do{fprintf(stderr,"%s\n",(s));exit(EXIT_FAILURE);}while(0)
 
 /* stack */
 elem stack[STACK_SIZE];
 int sp = 0;
-#define has(x) do{if(sp<(x))error("Stack was empty");}while(0)
+#define has(x) do{if(sp<(x))error("Error: Too few elements");}while(0)
 void push(elem x) {stack[sp++] = x;}
 elem pop() {has(1); return stack[--sp];}
 elem peek() {has(1); return stack[sp-1];}
 #define op1(c) do{push(c(pop()));}while(0)
 #define op2(c) do{has(2);push((pop())c(pop()));}while(0)
-#define div0() do{has(2);if(!stack[sp-2])error("Division by zero");}while(0)
+#define div0() do{has(2);if(!stack[sp-2])error("Error: Division by zero");}while(0)
 
 /* heap */
 elem heap[HEAP_SIZE];
@@ -58,7 +59,7 @@ elem heap[HEAP_SIZE];
 } while(0)
 
 char *load(const char *filename) {
-    char *buffer = 0;
+    char *buffer = NULL;
     long length;
     FILE *file = fopen(filename, "rb");
     if (file) {
@@ -66,24 +67,26 @@ char *load(const char *filename) {
         length = ftell(file);
         fseek(file, 0, SEEK_SET);
         buffer = malloc(length);
-        if (buffer) fread(buffer, 1, length, file);
+        if (buffer) {
+            if (fread(buffer, 1, length, file) != length)
+                buffer = NULL;
+        }
         fclose(file);
     }
     return buffer;
 }
 
-int main(int argc, char *argv[]) {
-    if (argc<2) error("Usage: calc <src> {initial stack elements}");
-    const char *prog = load(argv[1]);
-    if (!prog) error("Error reading file");
-    for (int i=2; i<argc; i++) push(atoi(argv[i]));
-    for (int i=0;;) {
+int main(int argc, char **argv) {
+    if (argc < 2) error("Usage: calc <src> [<stack>...]");
+    char *prog = load(argv[1]);
+    if (!prog) error("Error: Reading file failed");
+    for (int i = 2; i < argc; i++) push(atoi(argv[i]));
+    for (int i = 0;;) {
         char c = prog[i++];
         if (ill(c)) goto end;
         if (in('0', c, '9')) push(10 * pop() + c - '0');
         else if (in('A', c, 'Z')) push(c - 'A');
-        else
-            switch (c) {
+        else switch (c) {
             case '!': op1(!); break;
             case '"': putcf('"'); break;
             case '#': push(0); break;
@@ -92,15 +95,15 @@ int main(int argc, char *argv[]) {
             case '&': op2(&); break;
             case'\'': pushf('\''); break;
             case '(': { if (!pop()) gof('(', ')'); } break;
-            case ')': break; /* end if */
+            case ')': /* end if */ break;
             case '*': op2(*); break;
             case '+': op2(+); break;
             case ',': push(heap[pop()]); break;
             case '-': op2(-); break;
             case '.': heap[pop()] = pop(); break;
             case '/': div0(); op2(/); break;
-            case ':': { const elem e = pop(); push(e); push(e); } break;
-            case ';': { const elem e = pop(); has(e+1); push(stack[sp-e-1]); } break;
+            case ':': push(peek()); break;
+            case ';': { const elem e = pop(); has(e + 1); push(stack[sp - e - 1]); } break;
             case '<': op2(<); break;
             case '=': op2(==); break;
             case '>': op2(>); break;
@@ -111,7 +114,7 @@ int main(int argc, char *argv[]) {
             case ']': { if (peek()) gob('[', ']'); } break;
             case '^': op2(^); break;
             case '_': op1(-); break;
-            case '`': { const elem e1 = pop(); has(e1+1); const elem e2 = pop(); for (int j = 0; j < e1; j++) pop(); push(e2); } break;
+            case '`': { const elem e1 = pop(); has(e1 + 1); const elem e2 = pop(); for (int j = 0; j < e1; j++) pop(); push(e2); } break;
             case 'a': putchar('\a'); break;
             case 'b': putchar('\b'); break;
             case 'c': sp = 0; break;
@@ -128,7 +131,7 @@ int main(int argc, char *argv[]) {
             case 'n': putchar('\n'); break;
             case 'o': printf("%d\n", peek()); break;
             case 'p': putchar(pop()); break;
-            case 'q': { for (int j = 0; j < sp; j++) printf("%i\n", stack[j]); } break;
+            case 'q': { for (int j = 0; j < sp; j++) printf("%d\n", stack[j]); } break;
             case 'r': putchar('\r'); break;
             case 's': { const elem e = pop(); push(e * e); } break;
             case 't': putchar('\t'); break;
@@ -142,9 +145,10 @@ int main(int argc, char *argv[]) {
             case '|': op2(|); break;
             case '}': i = pop(); break;
             case '~': op1(~); break;
-            default: { if (in('!', c, '~')) error("Unexpected character"); } break;
-            }
+            default: { if (in('!', c, '~')) error("Error: Unexpected character"); } break;
+        }
     }
 end:
-    return sp>0 ? pop() : EXIT_SUCCESS;
+    free(prog);
+    return sp > 0 ? pop() : EXIT_SUCCESS;
 }
