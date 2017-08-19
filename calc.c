@@ -127,7 +127,7 @@ int main(int argc, char **argv) {
     /* TODO case 'j': break; */
     /* TODO case 'k': break; */
     /* TODO case 'l': break; */
-    /* TODO case 'm': break; */
+            case 'm': { int d; scanf("%d", &d); push((elem) d); } break;
             case 'n': putchar('\n'); break;
             case 'o': printf("%d\n", peek()); break;
             case 'p': putchar(pop()); break;

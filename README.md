@@ -50,7 +50,7 @@
 |`j`                |                      |                                                        |            |
 |`k`                |                      |                                                        |            |
 |`l`                |                      |                                                        |            |
-|`m`                |                      |                                                        |            |
+|`m`                |Read number           |-                                                       |            |
 |`n`                |`putchar('\n')`       |C                                                       |`#10p`      |
 |`o`                |Output                |Deadfish, dc `p`                                        |`wn`        |
 |`p`                |`putchar()`           |C                                                       |            |
