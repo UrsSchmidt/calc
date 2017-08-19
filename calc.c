@@ -77,7 +77,7 @@ char *load(const char *filename) {
 }
 
 int main(int argc, char **argv) {
-    if (argc < 2) error("Usage: calc <src> [<stack>...]");
+    if (argc < 2) error("Usage: calc src=FILE [STACK...]");
     char *prog = load(argv[1]);
     if (!prog) error("Error: Reading file failed");
     for (int i = 2; i < argc; i++) push(atoi(argv[i]));
