@@ -8,8 +8,6 @@
 
 |chr |Command           |Inspired by     |Short for
 |----|------------------|----------------|---------------------------------
-|`0` - `9`|Push number  |Emmental        |
-|`A` - `Z`|Push address |FALSE `a` - `z` |`#0` - `#25`
 |`!` |Logical not       |C               |
 |`"` |Print string      |FALSE           |
 |`#` |Push 0            |Emmental        |
@@ -25,6 +23,7 @@
 |`-` |Subtract          |C               |
 |`.` |Assign            |FALSE `:`       |
 |`/` |Divide            |C               |
+|`0` - `9`|Push number  |Emmental        |
 |`:` |Duplicate         |Befunge, Emmental, FALSE `$`, Whitespace \[LF\]\[Space\]|
 |`;` |Pick (aka Copy)   |FALSE `ø`, Whitespace \[Tab\]\[Space\]|
 |`<` |Is less           |C               |
@@ -32,12 +31,13 @@
 |`>` |Is greater        |C               |
 |`?` |If expression     |C               |
 |`@` |Rotate            |FALSE           |
+|`A` - `Z`|Push address |FALSE `a` - `z` |`#0` - `#25`
 |`[` |While (begin)     |Brainfuck       |
 |`\` |Swap              |Befunge, FALSE, Whitespace \[LF\]\[Tab\]|
 |`]` |While (end)       |Brainfuck       |
 |`^` |Bitwise xor       |C               |
 |`_` |Negate            |dc, FALSE       |
-|`` ` ``|Slide          |Whitespace \[Tab\]\[LF\]|
+|<code>&#96;</code>|Slide|Whitespace \[Tab\]\[LF\]|
 |`a` |`putchar('\a')`   |C               |`#7p`
 |`b` |`putchar('\b')`   |C               |`#8p`
 |`c` |Clear stack       |dc              |
