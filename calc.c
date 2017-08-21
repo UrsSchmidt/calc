@@ -1,7 +1,9 @@
+#include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define STACK_SIZE 1024
 #define HEAP_SIZE 32
@@ -77,10 +79,12 @@ char *load(const char *filename) {
 }
 
 int main(int argc, char **argv) {
-    if (argc < 2) error("Usage: calc src=FILE [STACK...]");
-    char *prog = load(argv[1]);
+    const bool emode = argc < 2 ? false : !strcmp(argv[1], "-e");
+    const int offset = emode ? 3 : 2;
+    if (argc < offset) error("Usage: calc [-e] src [STACK ...]");
+    char *prog = emode ? argv[2] : load(argv[1]);
     if (!prog) error("Error: Reading file failed");
-    for (int i = 2; i < argc; i++) push(atoi(argv[i]));
+    for (int i = offset; i < argc; i++) push(atoi(argv[i]));
     for (int i = 0;;) {
         char c = prog[i++];
         if (ill(c)) goto end;
@@ -149,6 +153,6 @@ int main(int argc, char **argv) {
         }
     }
 end:
-    free(prog);
+    if (!emode) free(prog);
     return sp > 0 ? pop() : EXIT_SUCCESS;
 }
