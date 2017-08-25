@@ -10,6 +10,8 @@
 
 typedef int32_t elem;
 #define error(s) do{fprintf(stderr,"%s\n",(s));exit(EXIT_FAILURE);}while(0)
+#define in(a,b,c) (((a)<=(b))&&((b)<=(c)))
+#define ill(c) (!in(0x01,(c),0x7F))
 
 /* stack */
 elem stack[STACK_SIZE];
@@ -24,9 +26,6 @@ elem peek() {has(1); return stack[sp-1];}
 
 /* heap */
 elem heap[HEAP_SIZE];
-
-#define in(a,b,c) (((a)<=(b))&&((b)<=(c)))
-#define ill(c) (!in(0x01,(c),0x7F))
 
 #define putcf(to) do{while((c=prog[i++])!=(to))putchar(c);}while(0)
 #define pushf(to) do{while((c=prog[i++])!=(to))push(c);}while(0)
