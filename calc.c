@@ -148,7 +148,7 @@ int main(int argc, char **argv) {
             case '|': op2(|); break;
             case '}': i = pop(); break;
             case '~': op1(~); break;
-            default: { if (in('!', c, '~')) error("Error: Unexpected character"); } break;
+            default: { if (in('!', c, '~')) error("Error: Unexpected character"); }
         }
     }
 end:
