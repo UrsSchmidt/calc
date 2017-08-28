@@ -1,4 +1,4 @@
-{\:#=:("No")!(w)" bottle":#1=!("s")" of beer"\}S.
+{\:#=:("No")!(:w)" bottle":#1=!("s")" of beer"\}S.
 #99[
 S,x" on the wall,"n
 S,x"."n

@@ -140,7 +140,7 @@ int main(int argc, char **argv) {
             case 't': putchar('\t'); break;
     /* TODO case 'u': break; */
             case 'v': putchar('\v'); break;
-            case 'w': printf("%d", peek()); break;
+            case 'w': printf("%d", pop()); break;
             case 'x': { const elem e = pop(); push(i); i = e; } break;
     /* TODO case 'y': break; */
             case 'z': push(sp); break;
