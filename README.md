@@ -36,7 +36,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`\`                |Swap                  |Befunge, FALSE, Whitespace \[Space\]\[LF\]\[Tab\]                |            |
 |`]`                |While (end)           |Brainfuck                                                        |            |
 |`^`                |Bitwise xor           |C                                                                |            |
-|`_`                |Negate                |dc, FALSE                                                        |            |
+|`_`                |Negate                |C `-`, dc, FALSE                                                 |            |
 |<code>&#96;</code> |Slide                 |Whitespace \[Space\]\[Tab\]\[LF\]                                |            |
 |`a`                |`putchar('\a')`       |C                                                                |`#7p`       |
 |`b`                |`putchar('\b')`       |C                                                                |`#8p`       |
@@ -44,23 +44,23 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`d`                |Decrement             |Deadfish                                                         |`#1\-`      |
 |`e`                |                      |                                                                 |            |
 |`f`                |`putchar('\f')`       |C                                                                |`#12p`      |
-|`g`                |`getchar()`           |C                                                                |            |
+|`g`                |`getchar()`           |Befunge `~`, C, FALSE `^`                                        |            |
 |`h`                |Halt                  |Deadfish                                                         |            |
 |`i`                |Increment             |Deadfish                                                         |`#1+`       |
 |`j`                |                      |                                                                 |            |
 |`k`                |                      |                                                                 |            |
 |`l`                |                      |                                                                 |            |
-|`m`                |Read number           |-                                                                |            |
+|`m`                |Read number           |Befunge `&`                                                      |            |
 |`n`                |`putchar('\n')`       |C                                                                |`#10p`      |
-|`o`                |Output                |Deadfish, dc `p`                                                 |`wn`        |
-|`p`                |`putchar()`           |C                                                                |            |
+|`o`                |Output                |Deadfish, dc `p`                                                 |`:wn`       |
+|`p`                |`putchar()`           |Befunge `,`, C, FALSE `,`                                        |            |
 |`q`                |Debug (print stack)   |dc `f`                                                           |            |
 |`r`                |`putchar('\r')`       |C                                                                |`#13p`      |
 |`s`                |Square                |Deadfish                                                         |`:*`        |
 |`t`                |`putchar('\t')`       |C                                                                |`#9p`       |
 |`u`                |                      |                                                                 |            |
 |`v`                |`putchar('\v')`       |C                                                                |`#11p`      |
-|`w`                |Write number          |-                                                                |            |
+|`w`                |Write number          |Befunge `.`, FALSE `.`                                           |            |
 |`x`                |Call                  |dc, FALSE `!`                                                    |            |
 |`y`                |                      |                                                                 |            |
 |`z`                |Push stack size       |dc                                                               |            |
