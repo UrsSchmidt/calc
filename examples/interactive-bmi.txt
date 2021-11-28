@@ -1,0 +1,4 @@
+"Please enter your weight in kg: "mW.
+"Please enter your size in cm: "mS.
+S,sW,0000/B.
+"Your BMI is: "B,wn
