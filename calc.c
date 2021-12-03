@@ -6,7 +6,7 @@
 #include <string.h>
 
 #define STACK_SIZE 1024
-#define HEAP_SIZE 32
+#define HEAP_SIZE 1024
 
 typedef int32_t elem;
 #define error(s) do{fprintf(stderr,"%s\n",(s));exit(EXIT_FAILURE);}while(0)
