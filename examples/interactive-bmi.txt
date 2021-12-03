@@ -1,6 +1,6 @@
 "Please enter your weight in kg: "mW.
 "Please enter your size in cm: "mS.
 S,sW,0000/B.
-"Your BMI is: "B,wn
-#18B,<("You're underweight"n)
-#25B,>("You're overweight"n)
+"Your BMI is: "B,w#10p
+#18B,<("You're underweight"#10p)
+#25B,>("You're overweight"#10p)

@@ -1,6 +1,6 @@
 # 3.12.2021
 
-* removed `a`, `b`, `f`, `r`, `t` and `v`
+* removed `a`, `b`, `f`, `n`, `r`, `t` and `v`
 
 # 28.8.2017
 

@@ -51,7 +51,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`k`                |                      |                                                                 |            |
 |`l`                |                      |                                                                 |            |
 |`m`                |Read number           |Befunge `&`                                                      |            |
-|`n`                |`putchar('\n')`       |C                                                                |`#10p`      |
+|`n`                |                      |                                                                 |            |
 |`o`                |Output                |Deadfish, dc `p`                                                 |`:wn`       |
 |`p`                |`putchar()`           |Befunge `,`, C, FALSE `,`                                        |            |
 |`q`                |Debug (print stack)   |dc `f`                                                           |            |
@@ -76,6 +76,10 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 ## Commenting
 `#(this is a comment)`  
 `{this is a comment}$`
+
+## Printing a new line character
+
+`#10p`
 
 ## Pushing an integer
 

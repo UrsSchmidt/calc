@@ -131,7 +131,7 @@ int main(int argc, char **argv) {
     /* TODO case 'k': break; */
     /* TODO case 'l': break; */
             case 'm': { int d; scanf("%d", &d); push((elem) d); } break;
-            case 'n': putchar('\n'); break;
+    /* TODO case 'n': break; */
             case 'o': printf("%d\n", peek()); break;
             case 'p': putchar(pop()); break;
             case 'q': { for (int j = 0; j < sp; j++) printf("%d\n", stack[j]); } break;
