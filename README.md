@@ -55,7 +55,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`o`                |Output                |Deadfish, dc `p`                                                 |`:wn`       |
 |`p`                |`putchar()`           |Befunge `,`, C, FALSE `,`                                        |            |
 |`q`                |Debug (print stack)   |dc `f`                                                           |            |
-|`r`                |`putchar('\r')`       |C                                                                |`#13p`      |
+|`r`                |                      |                                                                 |            |
 |`s`                |Square                |Deadfish                                                         |`:*`        |
 |`t`                |                      |                                                                 |            |
 |`u`                |                      |                                                                 |            |
