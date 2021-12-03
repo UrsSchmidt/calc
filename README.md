@@ -43,7 +43,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`c`                |Clear stack           |dc                                                               |            |
 |`d`                |Decrement             |Deadfish                                                         |`#1\-`      |
 |`e`                |                      |                                                                 |            |
-|`f`                |`putchar('\f')`       |C                                                                |`#12p`      |
+|`f`                |                      |                                                                 |            |
 |`g`                |`getchar()`           |Befunge `~`, C, FALSE `^`                                        |            |
 |`h`                |Halt                  |Deadfish                                                         |            |
 |`i`                |Increment             |Deadfish                                                         |`#1+`       |

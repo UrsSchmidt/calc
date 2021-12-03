@@ -123,7 +123,7 @@ int main(int argc, char **argv) {
             case 'c': sp = 0; break;
             case 'd': push(pop() - 1); break;
     /* TODO case 'e': break; */
-            case 'f': putchar('\f'); break;
+    /* TODO case 'f': break; */
             case 'g': push(getchar()); break;
             case 'h': goto end;
             case 'i': push(pop() + 1); break;
