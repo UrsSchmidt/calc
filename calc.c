@@ -112,7 +112,7 @@ int main(int argc, char **argv) {
             case '=': op2(==); break;
             case '>': op2(>); break;
             case '?': { const elem e1 = pop(); const elem e2 = pop(); const elem e3 = pop(); push(e1 ? e2 : e3); } break;
-    /* TODO case '@': break; */
+            case '@': { const elem e = pop(); push(i); i = e; } break;
     /* TODO case 'A': break; */
     /* TODO case 'B': break; */
             case 'C': sp = 0; break;
@@ -136,7 +136,7 @@ int main(int argc, char **argv) {
     /* TODO case 'U': break; */
     /* TODO case 'V': break; */
             case 'W': printf("%d", pop()); break;
-            case 'X': { const elem e = pop(); push(i); i = e; } break;
+    /* TODO case 'X': break; */
     /* TODO case 'Y': break; */
             case 'Z': push(sp); break;
             case '[': { if (!peek()) gof('[', ']'); } break;

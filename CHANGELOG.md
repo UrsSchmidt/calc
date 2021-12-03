@@ -4,6 +4,7 @@
 * swapped all lower case and upper case commands
 * changed `;` into `O`
 * changed `@` into `;`
+* changed `X` into `@`
 
 # 28.8.2017
 

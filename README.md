@@ -30,7 +30,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`=`                |Is equal              |C `==`                                                           |            |
 |`>`                |Is greater            |C                                                                |            |
 |`?`                |If expression         |C                                                                |`` !O#2` `` |
-|`@`                |                      |                                                                 |            |
+|`@`                |Call                  |dc `x`, FALSE `!`                                                |            |
 |`A`                |                      |                                                                 |            |
 |`B`                |                      |                                                                 |            |
 |`C`                |Clear stack           |dc `c`                                                           |            |
@@ -54,7 +54,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`U`                |                      |                                                                 |            |
 |`V`                |                      |                                                                 |            |
 |`W`                |Write number          |Befunge `.`, FALSE `.`                                           |            |
-|`X`                |Call                  |dc `x`, FALSE `!`                                                |            |
+|`X`                |                      |                                                                 |            |
 |`Y`                |                      |                                                                 |            |
 |`Z`                |Push stack size       |dc `z`                                                           |            |
 |`[`                |While (begin)         |Brainfuck                                                        |            |

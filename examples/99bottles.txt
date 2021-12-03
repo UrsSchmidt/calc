@@ -1,8 +1,8 @@
 {#10P}n.
 {\:#=:("No more")!(:W)" bottle":#1=!("s")" of beer"\}s.
 #99[
-s,X" on the wall,"n,X
-s,X"."n,X
-D"Take one down, pass it around,"n,X
-s,X" on the wall."n,X
+s,@" on the wall,"n,@
+s,@"."n,@
+D"Take one down, pass it around,"n,@
+s,@" on the wall."n,@
 ]$
