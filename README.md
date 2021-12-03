@@ -6,7 +6,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 
 # Commands
 
-|Character          |Command               |Inspired by                                                      |Short for   |
+|Character          |Command               |Inspired by/Implementation notes                                 |Short for   |
 |-------------------|----------------------|-----------------------------------------------------------------|------------|
 |`!`                |Logical not           |C                                                                |            |
 |`"`                |Print string          |FALSE                                                            |            |
@@ -32,12 +32,12 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`?`                |If expression         |C                                                                |`` !O#2` `` |
 |`@`                |Call                  |dc `x`, FALSE `!`                                                |            |
 |`A`                |                      |                                                                 |            |
-|`B`                |                      |                                                                 |            |
+|`B`                |Beep                  |*not yet implemented*                                            |            |
 |`C`                |Clear stack           |dc `c`                                                           |            |
 |`D`                |Decrement             |Deadfish `d`                                                     |`#1\-`      |
-|`E`                |`exit()`              |C stdlib.h                                                       |            |
+|`E`                |`exit()`              |C *stdlib.h*                                                     |            |
 |`F`                |                      |                                                                 |            |
-|`G`                |`getchar()`           |Befunge `~`, C stdio.h, FALSE `^`                                |            |
+|`G`                |`getchar()`           |C *stdio.h*, Befunge `~`, FALSE `^`                              |            |
 |`H`                |                      |                                                                 |            |
 |`I`                |Increment             |Deadfish `i`                                                     |`#1+`       |
 |`J`                |                      |                                                                 |            |
@@ -46,7 +46,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`M`                |Read number           |Befunge `&`                                                      |            |
 |`N`                |                      |                                                                 |            |
 |`O`                |Pick (aka Copy)       |FALSE, Whitespace \[Space\]\[Tab\]\[Space\]                      |            |
-|`P`                |`putchar()`           |Befunge `,`, C stdio.h, FALSE `,`                                |            |
+|`P`                |`putchar()`           |C *stdio.h*, Befunge `,`, FALSE `,`                              |            |
 |`Q`                |Debug (print stack)   |dc `f`                                                           |            |
 |`R`                |                      |                                                                 |            |
 |`S`                |                      |                                                                 |            |

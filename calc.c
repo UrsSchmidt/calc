@@ -42,7 +42,7 @@ elem heap[HEAP_SIZE];
     int d = 1; \
     while (d) { \
         c = prog[i++]; \
-        if (ill(c)) goto end; \
+        if (ill(c)) error("Error: Unexpected character"); \
         switch (c) { \
         case '"': skipf('"'); break; \
         case '\'': skipf('\''); break; \
@@ -56,7 +56,7 @@ elem heap[HEAP_SIZE];
     i--; \
     while (d) { \
         c = prog[--i]; \
-        if (ill(c)) goto end; \
+        if (ill(c)) error("Error: Unexpected character"); \
         switch (c) { \
         case '"': skipb('"'); break; \
         case '\'': skipb('\''); break; \
@@ -94,7 +94,7 @@ int main(int argc, char **argv) {
     for (int i = offset; i < argc; i++) push(atoi(argv[i]));
     for (int i = 0;;) {
         char c = prog[i++];
-        if (ill(c)) goto end;
+        if (ill(c)) break;
         if (in('0', c, '9')) push(10 * pop() + c - '0');
         else if (in('a', c, 'z')) push(c - 'a');
         else switch (c) {
@@ -121,7 +121,7 @@ int main(int argc, char **argv) {
             case '?': { const elem e1 = pop(); const elem e2 = pop(); const elem e3 = pop(); push(e1 ? e2 : e3); } break;
             case '@': { const elem e = pop(); ret_push(i); i = e; } break;
     /* TODO case 'A': break; */
-    /* TODO case 'B': break; */
+            case 'B': printf("BEEP!\n"); break; /* not yet implemented! */
             case 'C': sp = 0; break;
             case 'D': push(pop() - 1); break;
             case 'E': if (!emode) free(prog); exit(pop()); break;
