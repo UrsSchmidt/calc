@@ -38,6 +38,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`^`                |Bitwise xor           |C                                                                |            |
 |`_`                |Negate                |C `-`, dc, FALSE                                                 |            |
 |<code>&#96;</code> |Slide                 |Whitespace \[Space\]\[Tab\]\[LF\]                                |            |
+|`a`                |                      |                                                                 |            |
 |`b`                |`putchar('\b')`       |C                                                                |`#8p`       |
 |`c`                |Clear stack           |dc                                                               |            |
 |`d`                |Decrement             |Deadfish                                                         |`#1\-`      |
