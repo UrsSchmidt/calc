@@ -5,6 +5,7 @@
 * changed `;` into `O`
 * changed `@` into `;`
 * changed `X` into `@`
+* added `E`, removed `H`
 
 # 28.8.2017
 

@@ -35,10 +35,10 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`B`                |                      |                                                                 |            |
 |`C`                |Clear stack           |dc `c`                                                           |            |
 |`D`                |Decrement             |Deadfish `d`                                                     |`#1\-`      |
-|`E`                |                      |                                                                 |            |
+|`E`                |`exit()`              |C stdlib.h                                                       |            |
 |`F`                |                      |                                                                 |            |
-|`G`                |`getchar()`           |Befunge `~`, C, FALSE `^`                                        |            |
-|`H`                |Halt                  |Deadfish `h`                                                     |            |
+|`G`                |`getchar()`           |Befunge `~`, C stdio.h, FALSE `^`                                |            |
+|`H`                |                      |                                                                 |            |
 |`I`                |Increment             |Deadfish `i`                                                     |`#1+`       |
 |`J`                |                      |                                                                 |            |
 |`K`                |                      |                                                                 |            |
@@ -46,7 +46,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`M`                |Read number           |Befunge `&`                                                      |            |
 |`N`                |                      |                                                                 |            |
 |`O`                |Pick (aka Copy)       |FALSE, Whitespace \[Space\]\[Tab\]\[Space\]                      |            |
-|`P`                |`putchar()`           |Befunge `,`, C, FALSE `,`                                        |            |
+|`P`                |`putchar()`           |Befunge `,`, C stdio.h, FALSE `,`                                |            |
 |`Q`                |Debug (print stack)   |dc `f`                                                           |            |
 |`R`                |                      |                                                                 |            |
 |`S`                |                      |                                                                 |            |

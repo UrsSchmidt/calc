@@ -1,5 +1,4 @@
 #include <stdbool.h>
-#include <stddef.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -125,10 +124,10 @@ int main(int argc, char **argv) {
     /* TODO case 'B': break; */
             case 'C': sp = 0; break;
             case 'D': push(pop() - 1); break;
-    /* TODO case 'E': break; */
+            case 'E': if (!emode) free(prog); exit(pop()); break;
     /* TODO case 'F': break; */
             case 'G': push(getchar()); break;
-            case 'H': goto end;
+    /* TODO case 'H': break; */
             case 'I': push(pop() + 1); break;
     /* TODO case 'J': break; */
     /* TODO case 'K': break; */
@@ -160,7 +159,5 @@ int main(int argc, char **argv) {
             default: { if (in('!', c, '~')) error("Error: Unexpected character"); }
         }
     }
-end:
-    if (!emode) free(prog);
-    return sp > 0 ? pop() : EXIT_SUCCESS;
+    return EXIT_SUCCESS;
 }
