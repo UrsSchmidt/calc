@@ -6,7 +6,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 
 # Commands
 
-|chr                |Command               |Inspired by                                                      |Short for   |
+|Character          |Command               |Inspired by                                                      |Short for   |
 |-------------------|----------------------|-----------------------------------------------------------------|------------|
 |`!`                |Logical not           |C                                                                |            |
 |`"`                |Print string          |FALSE                                                            |            |
@@ -37,7 +37,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`]`                |While (end)           |Brainfuck                                                        |            |
 |`^`                |Bitwise xor           |C                                                                |            |
 |`_`                |Negate                |C `-`, dc, FALSE                                                 |            |
-|<code>&#96;</code> |Slide                 |Whitespace \[Space\]\[Tab\]\[LF\]                                |            |
+|`` ` ``            |Slide                 |Whitespace \[Space\]\[Tab\]\[LF\]                                |            |
 |`a`                |                      |                                                                 |            |
 |`b`                |                      |                                                                 |            |
 |`c`                |Clear stack           |dc                                                               |            |
