@@ -106,7 +106,7 @@ int main(int argc, char **argv) {
             case '-': op2(-); break;
             case '.': heap[pop()] = pop(); break;
             case '/': div0(); op2(/); break;
-            case ':': push(peek()); break;
+            case ':': { const elem e = pop(); push(e); push(e); } break;
             case ';': { const elem e1 = pop(); const elem e2 = pop(); const elem e3 = pop(); push(e2); push(e1); push(e3); } break;
             case '<': op2(<); break;
             case '=': op2(==); break;
