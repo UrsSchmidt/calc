@@ -1,6 +1,7 @@
 # 3.12.2021
 
-* removed `a`, `b`, `f`, `n`, `r`, `t` and `v`
+* removed `a`, `b`, `f`, `n`, `o`, `r`, `s`, `t` and `v`
+* swapped all lower case and upper case commands
 
 # 28.8.2017
 

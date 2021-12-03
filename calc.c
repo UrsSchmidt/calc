@@ -69,8 +69,9 @@ char *load(const char *filename) {
         fseek(file, 0, SEEK_SET);
         buffer = malloc(length);
         if (buffer) {
-            if (fread(buffer, 1, length, file) != length)
+            if (fread(buffer, 1, length, file) != length) {
                 buffer = NULL;
+            }
         }
         fclose(file);
     }
@@ -88,7 +89,7 @@ int main(int argc, char **argv) {
         char c = prog[i++];
         if (ill(c)) goto end;
         if (in('0', c, '9')) push(10 * pop() + c - '0');
-        else if (in('A', c, 'Z')) push(c - 'A');
+        else if (in('a', c, 'z')) push(c - 'a');
         else switch (c) {
             case '!': op1(!); break;
             case '"': putcf('"'); break;
@@ -112,38 +113,38 @@ int main(int argc, char **argv) {
             case '>': op2(>); break;
             case '?': { const elem e1 = pop(); const elem e2 = pop(); const elem e3 = pop(); push(e1 ? e2 : e3); } break;
             case '@': { const elem e1 = pop(); const elem e2 = pop(); const elem e3 = pop(); push(e2); push(e1); push(e3); } break;
+    /* TODO case 'A': break; */
+    /* TODO case 'B': break; */
+            case 'C': sp = 0; break;
+            case 'D': push(pop() - 1); break;
+    /* TODO case 'E': break; */
+    /* TODO case 'F': break; */
+            case 'G': push(getchar()); break;
+            case 'H': goto end;
+            case 'I': push(pop() + 1); break;
+    /* TODO case 'J': break; */
+    /* TODO case 'K': break; */
+    /* TODO case 'L': break; */
+            case 'M': { int d; scanf("%d", &d); push((elem) d); } break;
+    /* TODO case 'N': break; */
+    /* TODO case 'O': break; */
+            case 'P': putchar(pop()); break;
+            case 'Q': { for (int j = 0; j < sp; j++) printf("%d\n", stack[j]); } break;
+    /* TODO case 'R': break; */
+    /* TODO case 'S': break; */
+    /* TODO case 'T': break; */
+    /* TODO case 'U': break; */
+    /* TODO case 'V': break; */
+            case 'W': printf("%d", pop()); break;
+            case 'X': { const elem e = pop(); push(i); i = e; } break;
+    /* TODO case 'Y': break; */
+            case 'Z': push(sp); break;
             case '[': { if (!peek()) gof('[', ']'); } break;
             case'\\': { const elem e1 = pop(); const elem e2 = pop(); push(e1); push(e2); } break;
             case ']': { if (peek()) gob('[', ']'); } break;
             case '^': op2(^); break;
             case '_': op1(-); break;
             case '`': { const elem e1 = pop(); has(e1 + 1); const elem e2 = pop(); for (int j = 0; j < e1; j++) pop(); push(e2); } break;
-    /* TODO case 'a': break; */
-    /* TODO case 'b': break; */
-            case 'c': sp = 0; break;
-            case 'd': push(pop() - 1); break;
-    /* TODO case 'e': break; */
-    /* TODO case 'f': break; */
-            case 'g': push(getchar()); break;
-            case 'h': goto end;
-            case 'i': push(pop() + 1); break;
-    /* TODO case 'j': break; */
-    /* TODO case 'k': break; */
-    /* TODO case 'l': break; */
-            case 'm': { int d; scanf("%d", &d); push((elem) d); } break;
-    /* TODO case 'n': break; */
-            case 'o': printf("%d\n", peek()); break;
-            case 'p': putchar(pop()); break;
-            case 'q': { for (int j = 0; j < sp; j++) printf("%d\n", stack[j]); } break;
-    /* TODO case 'r': break; */
-            case 's': { const elem e = pop(); push(e * e); } break;
-    /* TODO case 't': break; */
-    /* TODO case 'u': break; */
-    /* TODO case 'v': break; */
-            case 'w': printf("%d", pop()); break;
-            case 'x': { const elem e = pop(); push(i); i = e; } break;
-    /* TODO case 'y': break; */
-            case 'z': push(sp); break;
             case '{': { push(i); gof('{', '}'); } break;
             case '|': op2(|); break;
             case '}': i = pop(); break;

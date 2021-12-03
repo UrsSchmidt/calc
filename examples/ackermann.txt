@@ -1,5 +1,5 @@
-{@@N.M.
-M,#=(N,i)
-M,#<N,#=&(M,d#1A,x)
-M,#<N,#<&(M,dM,N,dA,xA,x)
-\}:A.xo$
+{@@n.m.
+m,#=(n,I)
+m,#<n,#=&(m,D#1a,X)
+m,#<n,#<&(m,Dm,n,Da,Xa,X)
+\}:a.XW#10P
