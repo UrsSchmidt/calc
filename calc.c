@@ -137,7 +137,7 @@ int main(int argc, char **argv) {
             case 'q': { for (int j = 0; j < sp; j++) printf("%d\n", stack[j]); } break;
             case 'r': putchar('\r'); break;
             case 's': { const elem e = pop(); push(e * e); } break;
-            case 't': putchar('\t'); break;
+    /* TODO case 't': break; */
     /* TODO case 'u': break; */
             case 'v': putchar('\v'); break;
             case 'w': printf("%d", pop()); break;
