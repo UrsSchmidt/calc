@@ -59,7 +59,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`s`                |Square                |Deadfish                                                         |`:*`        |
 |`t`                |                      |                                                                 |            |
 |`u`                |                      |                                                                 |            |
-|`v`                |`putchar('\v')`       |C                                                                |`#11p`      |
+|`v`                |                      |                                                                 |            |
 |`w`                |Write number          |Befunge `.`, FALSE `.`                                           |            |
 |`x`                |Call                  |dc, FALSE `!`                                                    |            |
 |`y`                |                      |                                                                 |            |

@@ -139,7 +139,7 @@ int main(int argc, char **argv) {
             case 's': { const elem e = pop(); push(e * e); } break;
     /* TODO case 't': break; */
     /* TODO case 'u': break; */
-            case 'v': putchar('\v'); break;
+    /* TODO case 'v': break; */
             case 'w': printf("%d", pop()); break;
             case 'x': { const elem e = pop(); push(i); i = e; } break;
     /* TODO case 'y': break; */
