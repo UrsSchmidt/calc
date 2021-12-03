@@ -107,7 +107,7 @@ int main(int argc, char **argv) {
             case '.': heap[pop()] = pop(); break;
             case '/': div0(); op2(/); break;
             case ':': push(peek()); break;
-            case ';': { const elem e = pop(); has(e + 1); push(stack[sp - e - 1]); } break;
+    /* TODO case ';': break; */
             case '<': op2(<); break;
             case '=': op2(==); break;
             case '>': op2(>); break;
@@ -127,7 +127,7 @@ int main(int argc, char **argv) {
     /* TODO case 'L': break; */
             case 'M': { int d; scanf("%d", &d); push((elem) d); } break;
     /* TODO case 'N': break; */
-    /* TODO case 'O': break; */
+            case 'O': { const elem e = pop(); has(e + 1); push(stack[sp - e - 1]); } break;
             case 'P': putchar(pop()); break;
             case 'Q': { for (int j = 0; j < sp; j++) printf("%d\n", stack[j]); } break;
     /* TODO case 'R': break; */

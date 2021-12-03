@@ -25,11 +25,11 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`/`                |Divide                |C                                                                |            |
 |`0` - `9`          |(see below)           |Emmental                                                         |            |
 |`:`                |Duplicate             |Befunge, Emmental, FALSE `$`, Whitespace \[Space\]\[LF\]\[Space\]|            |
-|`;`                |Pick (aka Copy)       |FALSE `ø`, Whitespace \[Space\]\[Tab\]\[Space\]                  |            |
+|`;`                |                      |                                                                 |            |
 |`<`                |Is less               |C                                                                |            |
 |`=`                |Is equal              |C `==`                                                           |            |
 |`>`                |Is greater            |C                                                                |            |
-|`?`                |If expression         |C                                                                |`` !;#2` `` |
+|`?`                |If expression         |C                                                                |`` !O#2` `` |
 |`@`                |Rotate                |FALSE                                                            |            |
 |`A`                |                      |                                                                 |            |
 |`B`                |                      |                                                                 |            |
@@ -45,7 +45,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`L`                |                      |                                                                 |            |
 |`M`                |Read number           |Befunge `&`                                                      |            |
 |`N`                |                      |                                                                 |            |
-|`O`                |                      |                                                                 |            |
+|`O`                |Pick (aka Copy)       |FALSE, Whitespace \[Space\]\[Tab\]\[Space\]                      |            |
 |`P`                |`putchar()`           |Befunge `,`, C, FALSE `,`                                        |            |
 |`Q`                |Debug (print stack)   |dc `f`                                                           |            |
 |`R`                |                      |                                                                 |            |
