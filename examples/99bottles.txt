@@ -1,5 +1,5 @@
 {#10P}n.
-{\:#=:("No more")!(:W)" bottle":#1=!("s")" of beer"\}s.
+{:#=:("No more")!(:W)" bottle":#1=!("s")" of beer"}s.
 #99[
 s,@" on the wall,"n,@
 s,@"."n,@

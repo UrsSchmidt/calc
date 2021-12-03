@@ -5,8 +5,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define STACK_SIZE 1024
-#define HEAP_SIZE 1024
+#define STACK_SIZE        1024
+#define RETURN_STACK_SIZE 1024
+#define HEAP_SIZE         1024
 
 typedef int32_t elem;
 #define error(s) do{fprintf(stderr,"%s\n",(s));exit(EXIT_FAILURE);}while(0)
@@ -23,6 +24,13 @@ elem peek() {has(1); return stack[sp-1];}
 #define op1(c) do{push(c(pop()));}while(0)
 #define op2(c) do{has(2);push((pop())c(pop()));}while(0)
 #define div0() do{has(2);if(!stack[sp-2])error("Error: Division by zero");}while(0)
+
+/* return stack */
+elem ret_stack[RETURN_STACK_SIZE];
+int ret_sp = 0;
+#define ret_has(x) do{if(ret_sp<(x))error("Error: Too few elements");}while(0)
+void ret_push(elem x) {ret_stack[ret_sp++] = x;}
+elem ret_pop() {ret_has(1); return ret_stack[--ret_sp];}
 
 /* heap */
 elem heap[HEAP_SIZE];
@@ -112,7 +120,7 @@ int main(int argc, char **argv) {
             case '=': op2(==); break;
             case '>': op2(>); break;
             case '?': { const elem e1 = pop(); const elem e2 = pop(); const elem e3 = pop(); push(e1 ? e2 : e3); } break;
-            case '@': { const elem e = pop(); push(i); i = e; } break;
+            case '@': { const elem e = pop(); ret_push(i); i = e; } break;
     /* TODO case 'A': break; */
     /* TODO case 'B': break; */
             case 'C': sp = 0; break;
@@ -147,7 +155,7 @@ int main(int argc, char **argv) {
             case '`': { const elem e1 = pop(); has(e1 + 1); const elem e2 = pop(); for (int j = 0; j < e1; j++) pop(); push(e2); } break;
             case '{': { push(i); gof('{', '}'); } break;
             case '|': op2(|); break;
-            case '}': i = pop(); break;
+            case '}': i = ret_pop(); break;
             case '~': op1(~); break;
             default: { if (in('!', c, '~')) error("Error: Unexpected character"); }
         }
