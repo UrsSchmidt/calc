@@ -2,3 +2,5 @@
 "Please enter your size in cm: "mS.
 S,sW,0000/B.
 "Your BMI is: "B,wn
+#18B,<("You're underweight"n)
+#25B,>("You're overweight"n)
