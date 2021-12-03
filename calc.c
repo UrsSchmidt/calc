@@ -107,12 +107,12 @@ int main(int argc, char **argv) {
             case '.': heap[pop()] = pop(); break;
             case '/': div0(); op2(/); break;
             case ':': push(peek()); break;
-    /* TODO case ';': break; */
+            case ';': { const elem e1 = pop(); const elem e2 = pop(); const elem e3 = pop(); push(e2); push(e1); push(e3); } break;
             case '<': op2(<); break;
             case '=': op2(==); break;
             case '>': op2(>); break;
             case '?': { const elem e1 = pop(); const elem e2 = pop(); const elem e3 = pop(); push(e1 ? e2 : e3); } break;
-            case '@': { const elem e1 = pop(); const elem e2 = pop(); const elem e3 = pop(); push(e2); push(e1); push(e3); } break;
+    /* TODO case '@': break; */
     /* TODO case 'A': break; */
     /* TODO case 'B': break; */
             case 'C': sp = 0; break;

@@ -25,12 +25,12 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`/`                |Divide                |C                                                                |            |
 |`0` - `9`          |(see below)           |Emmental                                                         |            |
 |`:`                |Duplicate             |Befunge, Emmental, FALSE `$`, Whitespace \[Space\]\[LF\]\[Space\]|            |
-|`;`                |                      |                                                                 |            |
+|`;`                |Rotate                |FALSE `@`                                                        |            |
 |`<`                |Is less               |C                                                                |            |
 |`=`                |Is equal              |C `==`                                                           |            |
 |`>`                |Is greater            |C                                                                |            |
 |`?`                |If expression         |C                                                                |`` !O#2` `` |
-|`@`                |Rotate                |FALSE                                                            |            |
+|`@`                |                      |                                                                 |            |
 |`A`                |                      |                                                                 |            |
 |`B`                |                      |                                                                 |            |
 |`C`                |Clear stack           |dc `c`                                                           |            |
@@ -113,7 +113,7 @@ body1 is only accessing the top value:
 condition `:(\` body1 `\)!(` body2 `)`
 
 body1 is only accessing the top two values:  
-condition `:(@@` body1 `@)!(` body2 `)`
+condition `:(;;` body1 `;)!(` body2 `)`
 
 ## Looping
 
@@ -136,4 +136,4 @@ Looping n..m:
 
 The example `primes.txt` was converted from the [FALSE Prime Numbers](http://strlen.com/false-language "FALSE Prime Numbers") example. Here in comparison:  
 <pre> 99 9[1-$][ \$@$@$@$@\/*=[1-$$[%\1-$@]?0=[\$.' ,\]?]?  ]#
-#99#9 D : [$\:@:@:@:@ /*=(D ::($\D :@) #=(\:W" "\) ) D:] $$$</pre>
+#99#9 D : [$\:;:;:;:; /*=(D ::($\D :;) #=(\:W" "\) ) D:] $$$</pre>

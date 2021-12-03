@@ -3,6 +3,7 @@
 * removed `a`, `b`, `f`, `n`, `o`, `r`, `s`, `t` and `v`
 * swapped all lower case and upper case commands
 * changed `;` into `O`
+* changed `@` into `;`
 
 # 28.8.2017
 

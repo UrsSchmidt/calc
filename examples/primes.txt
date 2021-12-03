@@ -1,2 +1,2 @@
 #( this is a direct conversion from the FALSE prime numbers example )
-#99#9D:[$\:@:@:@:@/*=(D::($\D:@)#=(\:W" "\))D:]$$$
+#99#9D:[$\:;:;:;:;/*=(D::($\D:;)#=(\:W" "\))D:]$$$
