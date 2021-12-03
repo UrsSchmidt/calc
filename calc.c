@@ -118,7 +118,7 @@ int main(int argc, char **argv) {
             case '^': op2(^); break;
             case '_': op1(-); break;
             case '`': { const elem e1 = pop(); has(e1 + 1); const elem e2 = pop(); for (int j = 0; j < e1; j++) pop(); push(e2); } break;
-            case 'a': putchar('\a'); break;
+    /* TODO case 'a': break; */
             case 'b': putchar('\b'); break;
             case 'c': sp = 0; break;
             case 'd': push(pop() - 1); break;

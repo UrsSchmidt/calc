@@ -1,35 +1,39 @@
-# 28.8.
+# 3.12.2021
+
+* removed `a`
+
+# 28.8.2017
 
 * changed `w`
 
-# 19.8.
+# 19.8.2017
 
 * added `m`
 
-# 9.3.
+# 9.3.2017
 
 * changed `"`
 
-# 8.3.
+# 8.3.2017
 
 * added `w`
 
-# 4.3.
+# 4.3.2017
 
 * removed `j` and `l`
 * changed `(`
 
-# 1.3.
+# 1.3.2017
 
 * added `` ` ``, changed `s`
 * added `g` and `o`, changed `p`, removed `r` and `w`
 * added `h`, changed `q`, removed `f`
 * added `a`, `b`, `f`, `r` and `v`
 
-# 28.2.
+# 28.2.2017
 
 * changed `"`, removed `` ` ``, `a`, `e` and `o`
 
-# 15.2.
+# 15.2.2017
 
 * initial release
