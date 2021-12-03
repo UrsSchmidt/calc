@@ -52,7 +52,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`l`                |                      |                                                                 |            |
 |`m`                |Read number           |Befunge `&`                                                      |            |
 |`n`                |                      |                                                                 |            |
-|`o`                |Output                |Deadfish, dc `p`                                                 |`:wn`       |
+|`o`                |Output                |Deadfish, dc `p`                                                 |`:w#10p`    |
 |`p`                |`putchar()`           |Befunge `,`, C, FALSE `,`                                        |            |
 |`q`                |Debug (print stack)   |dc `f`                                                           |            |
 |`r`                |                      |                                                                 |            |
