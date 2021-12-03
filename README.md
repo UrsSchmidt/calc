@@ -39,7 +39,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`_`                |Negate                |C `-`, dc, FALSE                                                 |            |
 |<code>&#96;</code> |Slide                 |Whitespace \[Space\]\[Tab\]\[LF\]                                |            |
 |`a`                |                      |                                                                 |            |
-|`b`                |`putchar('\b')`       |C                                                                |`#8p`       |
+|`b`                |                      |                                                                 |            |
 |`c`                |Clear stack           |dc                                                               |            |
 |`d`                |Decrement             |Deadfish                                                         |`#1\-`      |
 |`e`                |                      |                                                                 |            |

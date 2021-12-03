@@ -1,6 +1,6 @@
 # 3.12.2021
 
-* removed `a`
+* removed `a` and `b`
 
 # 28.8.2017
 
