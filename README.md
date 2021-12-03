@@ -2,7 +2,7 @@
 `calc` is a small [esoteric programming language](https://en.wikipedia.org/wiki/Esoteric_programming_language "esoteric programming language") based on [FALSE](https://esolangs.org/wiki/FALSE "FALSE") and [dc](https://esolangs.org/wiki/Dc "dc"). It also draws inspiration from [Deadfish](https://esolangs.org/wiki/Deadfish "Deadfish"), C, [Befunge](https://esolangs.org/wiki/Befunge "Befunge"), [Whitespace](https://esolangs.org/wiki/Whitespace "Whitespace"), [Emmental](https://esolangs.org/wiki/Emmental "Emmental") and [Brainfuck](https://esolangs.org/wiki/Brainfuck "Brainfuck").
 
 # Basics
-Every printable ASCII character has exactly one semantic meaning. Some letters do not have any meaning assigned yet. Most characters are executed from left to right (see [Reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation "RPN")). Thus if you wanted to calculate 6 / 3, it would look like this: `#3#6/W`. Note that the operands are in reverse order, which is important when subtracting or dividing integers. This example will push the number 3, then the number 6, then divide them by popping both arguments from the stack and pushing the result, i.e. 2, then printing the number to the console and then popping the result back from the stack, leaving it empty.
+Every printable ASCII character has exactly one semantic meaning. Some letters do not have any meaning assigned yet. Most characters are executed from left to right (see [Reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation "RPN")). Thus if you wanted to calculate 6 / 3, it would look like this: `#3#6/W`. Note that the operands are in reverse order, which is important when subtracting or dividing integers. This example will push the number 3, then the number 6, then divide them by popping both arguments from the stack and pushing the result, i.e. 2, then printing the number to the console and popping the result from the stack, leaving it empty.
 
 # Commands
 
@@ -33,13 +33,13 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`@`                |Rotate                |FALSE                                                            |            |
 |`A`                |                      |                                                                 |            |
 |`B`                |                      |                                                                 |            |
-|`C`                |Clear stack           |dc                                                               |            |
-|`D`                |Decrement             |Deadfish                                                         |`#1\-`      |
+|`C`                |Clear stack           |dc `c`                                                           |            |
+|`D`                |Decrement             |Deadfish `d`                                                     |`#1\-`      |
 |`E`                |                      |                                                                 |            |
 |`F`                |                      |                                                                 |            |
 |`G`                |`getchar()`           |Befunge `~`, C, FALSE `^`                                        |            |
-|`H`                |Halt                  |Deadfish                                                         |            |
-|`I`                |Increment             |Deadfish                                                         |`#1+`       |
+|`H`                |Halt                  |Deadfish `h`                                                     |            |
+|`I`                |Increment             |Deadfish `i`                                                     |`#1+`       |
 |`J`                |                      |                                                                 |            |
 |`K`                |                      |                                                                 |            |
 |`L`                |                      |                                                                 |            |
@@ -54,9 +54,9 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`U`                |                      |                                                                 |            |
 |`V`                |                      |                                                                 |            |
 |`W`                |Write number          |Befunge `.`, FALSE `.`                                           |            |
-|`X`                |Call                  |dc, FALSE `!`                                                    |            |
+|`X`                |Call                  |dc `x`, FALSE `!`                                                |            |
 |`Y`                |                      |                                                                 |            |
-|`Z`                |Push stack size       |dc                                                               |            |
+|`Z`                |Push stack size       |dc `z`                                                           |            |
 |`[`                |While (begin)         |Brainfuck                                                        |            |
 |`\`                |Swap                  |Befunge, FALSE, Whitespace \[Space\]\[LF\]\[Tab\]                |            |
 |`]`                |While (end)           |Brainfuck                                                        |            |
