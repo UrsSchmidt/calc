@@ -124,7 +124,7 @@ int main(int argc, char **argv) {
             case 'B': printf("BEEP!\n"); break; /* not yet implemented! */
             case 'C': sp = 0; break;
             case 'D': push(pop() - 1); break;
-            case 'E': if (!emode) free(prog); exit(pop()); break;
+            case 'E': { if (!emode) free(prog); exit(pop()); } break;
     /* TODO case 'F': break; */
             case 'G': push(getchar()); break;
     /* TODO case 'H': break; */
@@ -159,5 +159,6 @@ int main(int argc, char **argv) {
             default: { if (in('!', c, '~')) error("Error: Unexpected character"); }
         }
     }
+    if (!emode) free(prog);
     return EXIT_SUCCESS;
 }
