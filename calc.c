@@ -133,7 +133,7 @@ int main(int argc, char **argv) {
     /* TODO case 'K': break; */
     /* TODO case 'L': break; */
             case 'M': { int d; scanf("%d", &d); push((elem) d); } break;
-    /* TODO case 'N': break; */
+            case 'N': putchar('\n'); break;
             case 'O': { const elem e = pop(); has(e + 1); push(stack[sp - e - 1]); } break;
             case 'P': putchar(pop()); break;
             case 'Q': { for (int j = 0; j < sp; j++) printf("%d\n", stack[j]); } break;

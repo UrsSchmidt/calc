@@ -44,7 +44,7 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 |`K`                |                      |                                                                 |            |
 |`L`                |                      |                                                                 |            |
 |`M`                |Read number           |Befunge `&`                                                      |            |
-|`N`                |                      |                                                                 |            |
+|`N`                |`putchar('\n')`       |C                                                                |`#10P`      |
 |`O`                |Pick (aka Copy)       |FALSE, Whitespace \[Space\]\[Tab\]\[Space\]                      |            |
 |`P`                |`putchar()`           |C *stdio.h*, Befunge `,`, FALSE `,`                              |            |
 |`Q`                |Debug (print stack)   |dc `f`                                                           |            |
@@ -76,10 +76,6 @@ Every printable ASCII character has exactly one semantic meaning. Some letters d
 ## Commenting
 `#(this is a comment)`  
 `{this is a comment}$`
-
-## Printing a new line character
-
-`#10P`
 
 ## Pushing an integer
 
