@@ -16,18 +16,18 @@ typedef int32_t elem;
 /* stack */
 elem stack[STACK_SIZE];
 int sp = 0;
-#define has(x) do{if(sp<(x))error("Error: Too few elements");}while(0)
+#define has(x) do{if(sp<(x))error("Error: too few elements");}while(0)
 void push(elem x) {stack[sp++] = x;}
 elem pop() {has(1); return stack[--sp];}
 elem peek() {has(1); return stack[sp-1];}
 #define op1(c) do{push(c(pop()));}while(0)
 #define op2(c) do{has(2);push((pop())c(pop()));}while(0)
-#define div0() do{has(2);if(!stack[sp-2])error("Error: Division by zero");}while(0)
+#define div0() do{has(2);if(!stack[sp-2])error("Error: division by zero");}while(0)
 
 /* return stack */
 elem ret_stack[RETURN_STACK_SIZE];
 int ret_sp = 0;
-#define ret_has(x) do{if(ret_sp<(x))error("Error: Too few elements");}while(0)
+#define ret_has(x) do{if(ret_sp<(x))error("Error: too few elements");}while(0)
 void ret_push(elem x) {ret_stack[ret_sp++] = x;}
 elem ret_pop() {ret_has(1); return ret_stack[--ret_sp];}
 
@@ -42,7 +42,7 @@ elem heap[HEAP_SIZE];
     int d = 1; \
     while (d) { \
         c = prog[i++]; \
-        if (ill(c)) error("Error: Unexpected character"); \
+        if (ill(c)) error("Error: unexpected character"); \
         switch (c) { \
         case '"': skipf('"'); break; \
         case '\'': skipf('\''); break; \
@@ -56,7 +56,7 @@ elem heap[HEAP_SIZE];
     i--; \
     while (d) { \
         c = prog[--i]; \
-        if (ill(c)) error("Error: Unexpected character"); \
+        if (ill(c)) error("Error: unexpected character"); \
         switch (c) { \
         case '"': skipb('"'); break; \
         case '\'': skipb('\''); break; \
@@ -90,7 +90,7 @@ int main(int argc, char **argv) {
     const int offset = emode ? 3 : 2;
     if (argc < offset) error("Usage: calc [-e] src [STACK ...]");
     char *prog = emode ? argv[2] : load(argv[1]);
-    if (!prog) error("Error: Reading file failed");
+    if (!prog) error("Error: reading file failed");
     for (int i = offset; i < argc; i++) push(atoi(argv[i]));
     for (int i = 0;;) {
         char c = prog[i++];
@@ -156,7 +156,7 @@ int main(int argc, char **argv) {
             case '|': op2(|); break;
             case '}': i = ret_pop(); break;
             case '~': op1(~); break;
-            default: { if (in('!', c, '~')) error("Error: Unexpected character"); }
+            default: { if (in('!', c, '~')) error("Error: unexpected character"); }
         }
     }
     if (!emode) free(prog);
