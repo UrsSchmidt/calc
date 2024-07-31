@@ -68,7 +68,7 @@ elem heap[HEAP_SIZE];
 
 char *load(const char *filename) {
     char *buffer = NULL;
-    long length;
+    size_t length;
     FILE *file = fopen(filename, "rb");
     if (file) {
         fseek(file, 0, SEEK_END);
