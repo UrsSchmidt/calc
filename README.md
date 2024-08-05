@@ -1,6 +1,13 @@
 # calc
 `calc` is a small [esoteric programming language](https://en.wikipedia.org/wiki/Esoteric_programming_language "esoteric programming language") based on [FALSE](https://esolangs.org/wiki/FALSE "FALSE") and [dc](https://esolangs.org/wiki/Dc "dc"). It also draws inspiration from [Deadfish](https://esolangs.org/wiki/Deadfish "Deadfish"), C, [Befunge](https://esolangs.org/wiki/Befunge "Befunge"), [Whitespace](https://esolangs.org/wiki/Whitespace "Whitespace"), [Emmental](https://esolangs.org/wiki/Emmental "Emmental") and [Brainfuck](https://esolangs.org/wiki/Brainfuck "Brainfuck").
 
+## Makefile
+
+Use `make` or `make calc` to build the project.
+Use `sudo make install` to install `calc`.
+Use `sudo make uninstall` to uninstall `calc`.
+Use `make clean` to clean the working directory.
+
 # Basics
 Every printable ASCII character has exactly one semantic meaning. Some letters do not have any meaning assigned yet. Most characters are executed from left to right (see [Reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation "RPN")). Thus if you wanted to calculate 6 / 3, it would look like this: `#3#6/W`. Note that the operands are in reverse order, which is important when subtracting or dividing integers. This example will push the number 3, then the number 6, then divide them by popping both arguments from the stack and pushing the result, i.e. 2, then printing the number to the console and popping the result from the stack, leaving it empty.
 
